@@ -1,0 +1,102 @@
+name: Deploy
+
+# main への push で本番へ配信する。
+#
+# サーバー固有の情報 (ホスト名・ユーザー・設置パス) はこのファイルに書かず、
+# すべて Secrets から渡す。リポジトリが public のため。
+#
+# 必要な Secrets:
+#   DEPLOY_HOST        サーバーのホスト名
+#   DEPLOY_USER        ssh ユーザー名
+#   DEPLOY_ROOT        設置先の絶対パス (calc-dojo ディレクトリ。末尾スラッシュなし)
+#   DEPLOY_SSH_KEY     秘密鍵 (OpenSSH 形式。パスフレーズなし)
+#   DEPLOY_KNOWN_HOSTS ssh-keyscan の出力
+#
+# 設置先のレイアウト:
+#   $DEPLOY_ROOT/web/     静的サイト
+#   $DEPLOY_ROOT/api/     FastAPI + .venv
+#   $DEPLOY_ROOT/server/  nginx テンプレートと pm2 の ecosystem ファイル
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 同時にデプロイが走らないようにする。進行中のものは完了させる。
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Deploy static site
+        env:
+          TARGET: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_ROOT }}/web/
+        run: |
+          rsync -az --delete -e "ssh -i ~/.ssh/id_deploy" \
+            index.html about.html assets mental multiple view \
+            "$TARGET"
+
+      - name: Deploy API and server configs
+        env:
+          HOST: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
+          ROOT: ${{ secrets.DEPLOY_ROOT }}
+        run: |
+          # .venv / data / run / .pm2 はサーバー側で生成・保持されるので送らない
+          rsync -az -e "ssh -i ~/.ssh/id_deploy" \
+            --exclude='__pycache__' --exclude='.venv' --exclude='data' \
+            --exclude='run' --exclude='.pm2' \
+            api/ "$HOST:$ROOT/api/"
+          rsync -az -e "ssh -i ~/.ssh/id_deploy" \
+            server/ "$HOST:$ROOT/server/"
+
+      - name: Install dependencies and restart API
+        env:
+          HOST: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
+          ROOT: ${{ secrets.DEPLOY_ROOT }}
+        run: |
+          ssh -i ~/.ssh/id_deploy "$HOST" bash -s <<EOF
+          set -e
+          cd "$ROOT/api"
+          # 初回のみ venv を作る
+          if [ ! -x .venv/bin/python ]; then
+            python3 -m venv .venv
+            .venv/bin/pip install --quiet --upgrade pip
+          fi
+          .venv/bin/pip install --quiet -r requirements.txt
+          # 起動していなければ start、していれば restart
+          PM2_HOME="$ROOT/api/.pm2" /usr/bin/pm2 startOrRestart "$ROOT/server/ecosystem.config.js"
+          EOF
+
+      - name: Smoke test
+        env:
+          BASE_URL: ${{ secrets.DEPLOY_BASE_URL }}
+        run: |
+          if [ -z "$BASE_URL" ]; then
+            echo "DEPLOY_BASE_URL is not set; skipping smoke test."
+            exit 0
+          fi
+          # 静的ページ
+          code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 2 "$BASE_URL/")
+          echo "static: $code"
+          [ "$code" = "200" ] || exit 1
+          # API (不正ボディを送り 422 が返れば経路が通っている。DBには書かない)
+          code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 2 \
+            -X POST "$BASE_URL/api/feedback" \
+            -H 'Content-Type: application/json' -d '{"feedback":"invalid"}')
+          echo "api: $code"
+          [ "$code" = "422" ] || exit 1

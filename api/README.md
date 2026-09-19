@@ -134,6 +134,45 @@ rsync -avz --exclude='__pycache__' --exclude='data' --exclude='.venv' api/ \
 rsync -avz server/ <server>:<root>/server/
 ```
 
+## CD (GitHub Actions)
+
+`main` への push で `.github/workflows/deploy.yml` が走り、静的サイトと API を
+配信して pm2 を再起動します。手動実行は Actions タブの workflow_dispatch から。
+
+リポジトリが public なので、サーバー固有の情報はワークフローに書かず
+Secrets から渡します。
+
+| Secret | 内容 |
+|---|---|
+| `DEPLOY_HOST` | サーバーのホスト名 |
+| `DEPLOY_USER` | ssh ユーザー名 |
+| `DEPLOY_ROOT` | 設置先の絶対パス (末尾スラッシュなし) |
+| `DEPLOY_SSH_KEY` | 秘密鍵 (パスフレーズなし) |
+| `DEPLOY_KNOWN_HOSTS` | `ssh-keyscan <host>` の出力 |
+| `DEPLOY_BASE_URL` | 任意。設定するとデプロイ後に疎通確認を行う |
+
+初期設定:
+
+```sh
+# 1. デプロイ専用の鍵を作る
+ssh-keygen -t ed25519 -N '' -C 'github-actions-calc-dojo' -f ~/.ssh/calc_dojo_deploy
+
+# 2. 公開鍵をサーバーの ~/.ssh/authorized_keys に追記する
+ssh-copy-id -i ~/.ssh/calc_dojo_deploy.pub <server>
+
+# 3. Secrets を登録する
+gh secret set DEPLOY_SSH_KEY < ~/.ssh/calc_dojo_deploy
+ssh-keyscan <host> | gh secret set DEPLOY_KNOWN_HOSTS
+gh secret set DEPLOY_HOST --body '<host>'
+gh secret set DEPLOY_USER --body '<user>'
+gh secret set DEPLOY_ROOT --body '<root>'
+gh secret set DEPLOY_BASE_URL --body 'https://<host>/calc-dojo'
+```
+
+`.venv` `data/` `run/` `.pm2` は転送対象外です。サーバー側で生成・保持され、
+デプロイで上書きされません。`requirements.txt` の差分はデプロイのたびに
+`pip install` で反映されます。
+
 ## 集計
 
 公開管理画面は用意していません。サーバー上で:
