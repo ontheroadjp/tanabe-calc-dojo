@@ -20,4 +20,4 @@ JavaScriptを使わない静的HTML/CSS構成です。
 
 ## フィードバック機能
 
-各講義末尾に「👍 役に立った / 🤔 もう少し説明がほしい」を追加。`server/` の FastAPI API が SQLite に匿名保存します。詳しくは `server/README.md` を参照してください。
+各講義末尾に「👍 役に立った / 🤔 もう少し説明がほしい」を追加。`api/` の FastAPI API が SQLite に匿名保存します。詳しくは `api/README.md` を参照してください。

@@ -1,0 +1,24 @@
+# nginx の location 設定。サーバーの絶対パスを含むため、このテンプレートから
+# 実ファイルを生成する (生成物 calc-dojo.conf は .gitignore 済み):
+#
+#   sed 's|__ROOT__|/actual/path/to/calc-dojo|g' \
+#     calc-dojo.conf.example > calc-dojo.conf
+#
+# 生成したファイルを nginx の設定ディレクトリから symlink する。
+
+# 静的サイトは <root>/web/ のみを公開する。
+# <root>/api/ と <root>/server/ は alias の外なので web からは参照できない。
+location ^~ /calc-dojo/ {
+    alias __ROOT__/web/;
+    index index.html;
+    try_files $uri $uri/ =404;
+}
+
+# フィードバックAPI（完全一致なので上の ^~ より優先される）。
+# TCPポートを取らず unix socket 経由にすることで、他サービスと
+# ポート番号を共有しない。
+location = /calc-dojo/api/feedback {
+    proxy_pass http://unix:__ROOT__/api/run/api.sock:/api/feedback;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}

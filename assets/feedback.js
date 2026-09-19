@@ -2,10 +2,17 @@
   const boxes = document.querySelectorAll(".feedback[data-page]");
   if (!boxes.length) return;
 
+  // サイトをサブディレクトリに置いても動くよう、
+  // このスクリプト自身のURLからAPIの位置を決める。
+  const self = document.currentScript
+    || document.querySelector('script[src$="assets/feedback.js"]');
+  const siteRoot = self.src.replace(/assets\/feedback\.js(\?.*)?$/, "");
+  const endpoint = new URL("api/feedback", siteRoot).href;
+
   const submittedKey = page => `calculation-feedback:${page}`;
 
   async function postFeedback(payload) {
-    const res = await fetch("/api/feedback", {
+    const res = await fetch(endpoint, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(payload)

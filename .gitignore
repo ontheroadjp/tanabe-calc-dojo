@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+api/.venv/
+api/data/
+api/run/
+api/.pm2/
+
+# サーバー固有の絶対パスを含む生成物 (calc-dojo.conf.example から生成)
+server/calc-dojo.conf
