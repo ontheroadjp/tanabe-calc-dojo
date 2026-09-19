@@ -2,20 +2,21 @@ name: Deploy
 
 # main への push で本番へ配信する。
 #
-# サーバー固有の情報 (ホスト名・ユーザー・設置パス) はこのファイルに書かず、
+# サーバー固有の情報 (ホスト名・ユーザー) はこのファイルに書かず、
 # すべて Secrets から渡す。リポジトリが public のため。
+#
+# デプロイ鍵は authorized_keys の forced command (server/deploy-shell.sh) で
+# 制限されている。許可されるのは以下の2つだけ:
+#   - rsync (rrsync により設置先ディレクトリ配下に限定)
+#   - refresh (server/refresh.sh の実行)
+# そのため転送先は設置先からの相対パス (/web/ など) で指定する。
 #
 # 必要な Secrets:
 #   DEPLOY_HOST        サーバーのホスト名
 #   DEPLOY_USER        ssh ユーザー名
-#   DEPLOY_ROOT        設置先の絶対パス (calc-dojo ディレクトリ。末尾スラッシュなし)
 #   DEPLOY_SSH_KEY     秘密鍵 (OpenSSH 形式。パスフレーズなし)
 #   DEPLOY_KNOWN_HOSTS ssh-keyscan の出力
-#
-# 設置先のレイアウト:
-#   $DEPLOY_ROOT/web/     静的サイト
-#   $DEPLOY_ROOT/api/     FastAPI + .venv
-#   $DEPLOY_ROOT/server/  nginx テンプレートと pm2 の ecosystem ファイル
+#   DEPLOY_BASE_URL    任意。設定するとデプロイ後に疎通確認を行う
 
 on:
   push:
@@ -32,6 +33,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
+    env:
+      HOST: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
+      SSH: ssh -i ~/.ssh/id_deploy
+
     steps:
       - uses: actions/checkout@v4
 
@@ -44,43 +49,22 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
 
       - name: Deploy static site
-        env:
-          TARGET: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_ROOT }}/web/
         run: |
-          rsync -az --delete -e "ssh -i ~/.ssh/id_deploy" \
+          rsync -az --delete -e "$SSH" \
             index.html about.html assets mental multiple view \
-            "$TARGET"
+            "$HOST:/web/"
 
       - name: Deploy API and server configs
-        env:
-          HOST: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
-          ROOT: ${{ secrets.DEPLOY_ROOT }}
         run: |
           # .venv / data / run / .pm2 はサーバー側で生成・保持されるので送らない
-          rsync -az -e "ssh -i ~/.ssh/id_deploy" \
+          rsync -az -e "$SSH" \
             --exclude='__pycache__' --exclude='.venv' --exclude='data' \
             --exclude='run' --exclude='.pm2' \
-            api/ "$HOST:$ROOT/api/"
-          rsync -az -e "ssh -i ~/.ssh/id_deploy" \
-            server/ "$HOST:$ROOT/server/"
+            api/ "$HOST:/api/"
+          rsync -az -e "$SSH" server/ "$HOST:/server/"
 
       - name: Install dependencies and restart API
-        env:
-          HOST: ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
-          ROOT: ${{ secrets.DEPLOY_ROOT }}
-        run: |
-          ssh -i ~/.ssh/id_deploy "$HOST" bash -s <<EOF
-          set -e
-          cd "$ROOT/api"
-          # 初回のみ venv を作る
-          if [ ! -x .venv/bin/python ]; then
-            python3 -m venv .venv
-            .venv/bin/pip install --quiet --upgrade pip
-          fi
-          .venv/bin/pip install --quiet -r requirements.txt
-          # 起動していなければ start、していれば restart
-          PM2_HOME="$ROOT/api/.pm2" /usr/bin/pm2 startOrRestart "$ROOT/server/ecosystem.config.js"
-          EOF
+        run: $SSH "$HOST" refresh
 
       - name: Smoke test
         env:
