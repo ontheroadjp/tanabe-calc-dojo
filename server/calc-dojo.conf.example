@@ -8,6 +8,15 @@
 # gzip 系のディレクティブは location 単位で有効なので、この設定は
 # /calc-dojo/ 配下にだけ効く。同じサーバーの他のコンテンツには影響しない。
 
+# MathJax はバージョン固定で、更新は意図的に行うときだけ。
+# 毎回の再確認（条件付きリクエスト）を省くため長めにキャッシュさせる。
+# より長いプレフィックスが優先されるので、下の /calc-dojo/ 設定より先に効く。
+location ^~ /calc-dojo/assets/mathjax/ {
+    alias __ROOT__/web/assets/mathjax/;
+    gzip_static on;
+    expires 30d;
+}
+
 # 静的サイトは <root>/web/ のみを公開する。
 # <root>/api/ と <root>/server/ は alias の外なので web からは参照できない。
 location ^~ /calc-dojo/ {
