@@ -61,10 +61,12 @@ async def dispatch(scope, receive, send):
 
 def main() -> None:
     if not (ROOT / "assets" / "mathjax" / "tex-svg.js").is_file():
-        print("警告: assets/mathjax/ がありません。数式が表示されません。")
-        print("      先に ./scripts/fetch-mathjax.sh を実行してください。\n")
-    print(f"起動しました: http://127.0.0.1:8000{PREFIX}/")
-    print(f"管理画面:     http://127.0.0.1:8000{PREFIX}/admin/login\n")
+        print("警告: assets/mathjax/ がありません。数式が表示されません。", flush=True)
+        print("      先に ./scripts/fetch-mathjax.sh を実行してください。\n", flush=True)
+    # uvicorn のログより先に出したいので、明示的に流す
+    print(f"起動しました: http://127.0.0.1:8000{PREFIX}/", flush=True)
+    print(f"管理画面:     http://127.0.0.1:8000{PREFIX}/admin/login", flush=True)
+    print("停止するには Ctrl+C\n", flush=True)
     uvicorn.run(dispatch, host="127.0.0.1", port=8000, log_level="info")
 
 
