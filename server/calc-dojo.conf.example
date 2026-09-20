@@ -1,10 +1,9 @@
-# nginx の location 設定。サーバーの絶対パスを含むため、このテンプレートから
-# 実ファイルを生成する (生成物 calc-dojo.conf は .gitignore 済み):
+# nginx の location 設定のテンプレート。
 #
-#   sed 's|__ROOT__|/actual/path/to/calc-dojo|g' \
-#     calc-dojo.conf.example > calc-dojo.conf
-#
-# 生成したファイルを nginx の設定ディレクトリから symlink する。
+# alias と proxy_pass が絶対パスを要求する一方、このリポジトリは public なので
+# サーバーのパスを含む実ファイルは置けない。デプロイのたびに server/refresh.sh
+# が置換して calc-dojo.conf を生成し、nginx の設定ディレクトリからは
+# そのファイルを symlink して使う。
 #
 # gzip 系のディレクティブは location 単位で有効なので、この設定は
 # /calc-dojo/ 配下にだけ効く。同じサーバーの他のコンテンツには影響しない。
