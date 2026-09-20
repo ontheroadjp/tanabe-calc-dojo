@@ -1,115 +1,127 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>判定を組み合わせる｜たなべ式計算道場</title><link rel="stylesheet" href="../assets/style.css"><script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']]
-  },
-  svg: { fontCache: 'global' }
-};
-</script>
-<script defer src="../assets/mathjax/tex-svg.js"></script>
-</head><body><main class="wrap">
-<header class="sitehead"><a class="brand" href="../index.html">たなべ式計算道場</a><nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav></header>
-<div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 判定を組み合わせる</div>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>判定を組み合わせる｜たなべ式計算道場</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"]],
+          displayMath: [["\\[", "\\]"]],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script defer src="../assets/mathjax/tex-svg.js"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="sitehead">
+        <a class="brand" href="../index.html">たなべ式計算道場</a>
+        <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
+      </header>
+      <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 判定を組み合わせる</div>
 
-<section class="hero">
-<span class="eyebrow">LESSON 04</span>
-<h1>判定を組み合わせる</h1>
-<p>5、2・4・8、3・9の倍数判定を組み合わせると、さらに多くの倍数を見抜けるようになります。</p>
-</section>
+      <section class="hero">
+        <span class="eyebrow">LESSON 04</span>
+        <h1>判定を組み合わせる</h1>
+        <p>5、2・4・8、3・9の倍数判定を組み合わせると、さらに多くの倍数を見抜けるようになります。</p>
+      </section>
 
-<section class="lesson">
-<h2>3つのグループで考える</h2>
-<p>ここまでの倍数判定は、次の3つのグループに分けて学んできました。</p>
-<div class="example">
-<p><b>グループA</b>　5の倍数</p>
-<p><b>グループB</b>　2・4・8の倍数</p>
-<p><b>グループC</b>　3・9の倍数</p>
-</div>
-<p>この分け方には意味があります。この3グループでは、<b>異なるグループの判定を「かつ」で組み合わせる</b>ことで、それぞれの数を掛けた数の倍数かどうかを判定できます。</p>
+      <section class="lesson">
+        <h2>3つのグループで考える</h2>
+        <p>ここまでの倍数判定は、次の3つのグループに分けて学んできました。</p>
+        <div class="example">
+          <p><b>グループA</b>　5の倍数</p>
+          <p><b>グループB</b>　2・4・8の倍数</p>
+          <p><b>グループC</b>　3・9の倍数</p>
+        </div>
+        <p>この分け方には意味があります。この3グループでは、<b>異なるグループの判定を「かつ」で組み合わせる</b>ことで、それぞれの数を掛けた数の倍数かどうかを判定できます。</p>
 
-<h2>「かつ」で組み合わせる</h2>
-<p>例えば、ある数が3の倍数であり、同時に4の倍数でもあるとします。</p>
-<div class="math">\(3\times4=12\)</div>
-<p class="rule-text">3の倍数 <b>かつ</b> 4の倍数なら、12の倍数です。</p>
-<p>3はグループC、4はグループBなので、異なるグループ同士の組み合わせです。</p>
+        <h2>「かつ」で組み合わせる</h2>
+        <p>例えば、ある数が3の倍数であり、同時に4の倍数でもあるとします。</p>
+        <div class="math">\(3\times4=12\)</div>
+        <p class="rule-text">3の倍数 <b>かつ</b> 4の倍数なら、12の倍数です。</p>
+        <p>3はグループC、4はグループBなので、異なるグループ同士の組み合わせです。</p>
 
-<div class="example">
-<div class="math math-lines">
-<div>\(\text{3の倍数かつ4の倍数} \rightarrow \text{12の倍数}\)</div>
-<div>\(\text{2の倍数かつ5の倍数} \rightarrow \text{10の倍数}\)</div>
-<div>\(\text{3の倍数かつ5の倍数} \rightarrow \text{15の倍数}\)</div>
-</div>
-</div>
+        <div class="example">
+          <div class="math math-lines">
+            <div>\(\text{3の倍数かつ4の倍数} \rightarrow \text{12の倍数}\)</div>
+            <div>\(\text{2の倍数かつ5の倍数} \rightarrow \text{10の倍数}\)</div>
+            <div>\(\text{3の倍数かつ5の倍数} \rightarrow \text{15の倍数}\)</div>
+          </div>
+        </div>
 
+        <h2>実際に判定してみる</h2>
+        <p>例えば、312が12の倍数かどうかを考えます。12で割るのではなく、3と4の倍数判定をそれぞれ使います。</p>
 
-<h2>実際に判定してみる</h2>
-<p>例えば、312が12の倍数かどうかを考えます。12で割るのではなく、3と4の倍数判定をそれぞれ使います。</p>
+        <div class="example">
+          <div class="judgment-example">
+            <div class="math">\(3+1+2=6 \rightarrow \text{6は3の倍数}\)</div>
+            <p class="judgment-result">だから、312は3の倍数です。</p>
+          </div>
 
-<div class="example">
-<div class="judgment-example">
-<div class="math">\(3+1+2=6 \rightarrow \text{6は3の倍数}\)</div>
-<p class="judgment-result">だから、312は3の倍数です。</p>
-</div>
+          <div class="judgment-example">
+            <div class="math">\(312 \rightarrow \text{下2桁は12} \rightarrow \text{12は4の倍数}\)</div>
+            <p class="judgment-result">だから、312は4の倍数です。</p>
+          </div>
+        </div>
 
-<div class="judgment-example">
-<div class="math">\(312 \rightarrow \text{下2桁は12} \rightarrow \text{12は4の倍数}\)</div>
-<p class="judgment-result">だから、312は4の倍数です。</p>
-</div>
-</div>
+        <p class="rule-text">312は3の倍数 <b>かつ</b> 4の倍数なので、12の倍数です。</p>
 
-<p class="rule-text">312は3の倍数 <b>かつ</b> 4の倍数なので、12の倍数です。</p>
+        <p>このように、12の倍数判定を新しく覚えるのではなく、すでに知っている3と4の倍数判定を組み合わせて判断できます。</p>
 
-<p>このように、12の倍数判定を新しく覚えるのではなく、すでに知っている3と4の倍数判定を組み合わせて判断できます。</p>
+        <h2>「または」ではない</h2>
+        <p>ここで大切なのは、条件が<b>「かつ」</b>であることです。</p>
+        <p>「3の倍数<b>または</b>4の倍数」では、12の倍数とは限りません。3の倍数であることと4の倍数であることの<b>両方</b>を満たして、はじめて12の倍数と判断できます。</p>
 
-<h2>「または」ではない</h2>
-<p>ここで大切なのは、条件が<b>「かつ」</b>であることです。</p>
-<p>「3の倍数<b>または</b>4の倍数」では、12の倍数とは限りません。3の倍数であることと4の倍数であることの<b>両方</b>を満たして、はじめて12の倍数と判断できます。</p>
+        <h2>同じグループ同士は、ここでは扱わない</h2>
+        <p>同じグループの判定を組み合わせて考えられる場合もあります。ただし、単純に2つの数を掛ければよいとは限りません。</p>
+        <div class="example">
+          <p>例えば、2の倍数かつ4の倍数だからといって、8の倍数になるとは限りません。</p>
+        </div>
+        <p>この違いをきちんと理解するには、因数や最小公倍数などの知識が必要になります。この講義ではそこまで踏み込まず、<b>異なるグループ同士の組み合わせ</b>を使えることを目標にします。</p>
 
-<h2>同じグループ同士は、ここでは扱わない</h2>
-<p>同じグループの判定を組み合わせて考えられる場合もあります。ただし、単純に2つの数を掛ければよいとは限りません。</p>
-<div class="example">
-<p>例えば、2の倍数かつ4の倍数だからといって、8の倍数になるとは限りません。</p>
-</div>
-<p>この違いをきちんと理解するには、因数や最小公倍数などの知識が必要になります。この講義ではそこまで踏み込まず、<b>異なるグループ同士の組み合わせ</b>を使えることを目標にします。</p>
+        <h2>組み合わせは、基本が身についてから</h2>
+        <p>まずは、5、2・4・8、3・9の倍数判定を、それぞれ迷わず使えるようになることが大切です。</p>
+        <p>はじめから組み合わせることを意識しすぎる必要はありません。<b>組み合わせを探すこと自体に時間を使ったら本末転倒です。</b>単体の倍数判定が苦もなく当たり前にできるようになってから、組み合わせを考えれば十分です。</p>
+        <p>組み合わせの中でも見つけやすいのが、<b>5の倍数との組み合わせ</b>です。一の位を見るだけで5の倍数かどうかが分かるので、ほかの判定と同時に使いやすいからです。</p>
+        <div class="example">
+          <p>例えば、435を見てみます。</p>
+          <div class="judgment-example">
+            <div class="math">\(4+3+5=12 \rightarrow \text{12は3の倍数}\)</div>
+            <p class="judgment-result">だから、435は3の倍数です。</p>
+          </div>
+          <div class="judgment-example">
+            <div class="math">\(435 \rightarrow \text{下1桁は5} \rightarrow \text{一の位が5}\)</div>
+            <p class="judgment-result">だから、435は5の倍数です。</p>
+          </div>
+        </div>
+        <div class="math">\(3\times5=15\)</div>
+        <p class="rule-text">435は3の倍数 <b>かつ</b> 5の倍数なので、15の倍数です。</p>
+        <p>このように、単体の判定が身についていれば、組み合わせを探そうとしなくても自然に複数の条件が見えるようになります。</p>
+        <div class="rule"><b>この講義のポイント</b><br />新しい倍数判定を一つずつ暗記するのではなく、すでに知っている判定を「かつ」で組み合わせます。まずはグループA〜Cの異なるグループ同士を組み合わせれば十分です。</div>
 
+        <div class="feedback" data-page="multiple/combine" data-title="判定を組み合わせる">
+          <h2>この講義は役に立ちましたか？</h2>
+          <p>今後の改善に使います。回答は匿名です。</p>
+          <div class="feedback-actions">
+            <button type="button" data-feedback="helpful">👍 役に立った</button>
+            <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
+          </div>
+          <div class="feedback-detail" hidden>
+            <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
+            <textarea maxlength="1000" placeholder="例：途中の説明をもう少し詳しく知りたい"></textarea>
+            <button type="button" class="feedback-submit">送信</button>
+          </div>
+          <p class="feedback-status" role="status" aria-live="polite"></p>
+        </div>
 
-<h2>組み合わせは、基本が身についてから</h2>
-<p>まずは、5、2・4・8、3・9の倍数判定を、それぞれ迷わず使えるようになることが大切です。</p>
-<p>はじめから組み合わせることを意識しすぎる必要はありません。<b>組み合わせを探すこと自体に時間を使ったら本末転倒です。</b>単体の倍数判定が苦もなく当たり前にできるようになってから、組み合わせを考えれば十分です。</p>
-<p>組み合わせの中でも見つけやすいのが、<b>5の倍数との組み合わせ</b>です。一の位を見るだけで5の倍数かどうかが分かるので、ほかの判定と同時に使いやすいからです。</p>
-<div class="example">
-<p>例えば、435を見てみます。</p>
-<div class="judgment-example">
-<div class="math">\(4+3+5=12 \rightarrow \text{12は3の倍数}\)</div>
-<p class="judgment-result">だから、435は3の倍数です。</p>
-</div>
-<div class="judgment-example">
-<div class="math">\(435 \rightarrow \text{下1桁は5} \rightarrow \text{一の位が5}\)</div>
-<p class="judgment-result">だから、435は5の倍数です。</p>
-</div>
-</div>
-<div class="math">\(3\times5=15\)</div>
-<p class="rule-text">435は3の倍数 <b>かつ</b> 5の倍数なので、15の倍数です。</p>
-<p>このように、単体の判定が身についていれば、組み合わせを探そうとしなくても自然に複数の条件が見えるようになります。</p>
-<div class="rule"><b>この講義のポイント</b><br>新しい倍数判定を一つずつ暗記するのではなく、すでに知っている判定を「かつ」で組み合わせます。まずはグループA〜Cの異なるグループ同士を組み合わせれば十分です。</div>
-
-<div class="feedback" data-page="multiple/combine" data-title="判定を組み合わせる">
-  <h2>この講義は役に立ちましたか？</h2>
-  <p>今後の改善に使います。回答は匿名です。</p>
-  <div class="feedback-actions">
-    <button type="button" data-feedback="helpful">👍 役に立った</button>
-    <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
-  </div>
-  <div class="feedback-detail" hidden>
-    <label>どこが分かりにくかったですか？ <span style="font-weight:400;color:var(--muted)">（任意）</span></label>
-    <textarea maxlength="1000" placeholder="例：途中の説明をもう少し詳しく知りたい"></textarea>
-    <button type="button" class="feedback-submit">送信</button>
-  </div>
-  <p class="feedback-status" role="status" aria-live="polite"></p>
-</div>
-
-<div class="pager"><a href="3-9.html">← 3・9の倍数</a><a href="index.html">一覧へ →</a></div>
-</section>
-<p class="footer-note">中学受験算数・たなべ式計算道場</p>
-</main></body></html>
+        <div class="pager"><a href="3-9.html">← 3・9の倍数</a><a href="index.html">一覧へ →</a></div>
+      </section>
+      <p class="footer-note">中学受験算数・たなべ式計算道場</p>
+    </main>
+  </body>
+</html>

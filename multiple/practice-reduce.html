@@ -1,21 +1,70 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>サッと約分する｜倍数判定トレーニング｜たなべ式計算道場</title><link rel="stylesheet" href="../assets/style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer src="../assets/mathjax/tex-svg.js"></script></head><body><main class="wrap"><header class="sitehead"><a class="brand" href="../index.html">たなべ式計算道場</a><nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav></header><div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; サッと約分する</div><section class="lesson"><span class="eyebrow">Practice</span><h1>サッと約分する</h1><p class="lead">約分するときに「何で割れる？」を手当たり次第に探さず、倍数判定から候補を見つけます。</p>
-<h2>文章題の答えに分数が出てきたら</h2>
-<div class="example"><p><b>問題</b></p><p>42人のクラスで、18人が電車で通学しています。電車で通学している人はクラス全体の何分のいくつですか。最も簡単な分数で答えましょう。</p>
-<div class="math">\(\frac{18}{42}\)</div></div>
-<p>ここで必要になるのが約分です。18と42を見て「何で割れる？」を探します。</p>
-<h2>倍数判定で、割れる数を見つける</h2>
-<div class="example"><p>18も42も偶数なので2で割れます。さらに、</p>
-<div class="math eq-aligned">\(\begin{aligned}1+8&=9\\4+2&=6\end{aligned}\)</div>
-<p>どちらも3の倍数です。つまり、2と3を組み合わせた6でも割れます。</p>
-<div class="math eq-aligned">\(\begin{aligned}\frac{18}{42}&=\frac{18\div6}{42\div6}\\&=\frac37\end{aligned}\)</div>
-<p><b>答え：\(\frac37\)</b></p></div>
-<div class="rule"><b>大きな数を見て、やみくもに割る数を探さない。</b><br>倍数判定ができると「何で割れそうか」の候補をすぐに見つけられます。</div>
-<h2>もう一つ｜掛ける前に約分する</h2>
-<div class="example"><p><b>次の計算をします。</b></p><div class="math">\(\frac{48\times25}{6}\)</div>
-<p>48×25を先に計算することもできます。でも48を見ると、偶数なので2の倍数。さらに、</p><div class="math">\(4+8=12\)</div><p>なので3の倍数でもあります。つまり48は6の倍数です。</p>
-<div class="math eq-aligned">\(\begin{aligned}\frac{48\times25}{6}&=8\times25\\&=200\end{aligned}\)</div></div>
-<div class="why"><b>ここでは「割れることに気づく」のが倍数判定の役割</b><br>気づいたあと「先に割って数を大きくしない」のは、計算の工夫です。同じ計算の中で2つの力がつながっています。</div>
-<h2>何が便利だった？</h2>
-<div class="rule">倍数判定ができると、大きな数でも<b>「何で割れそうか」</b>を素早く見つけられます。約分のたびに手当たり次第に割って確かめる必要がありません。</div>
-<h2>関連する講義</h2><div class="related-tips"><a class="related-tip" href="2-4-8.html">2・4・8の倍数 →</a><a class="related-tip" href="3-9.html">3・9の倍数 →</a><a class="related-tip" href="../view/tip-divide-first.html">計算の工夫｜掛ける前に割る →</a></div>
-<div class="feedback" data-page="multiple/practice-reduce" data-title="サッと約分する"><h2>この講義は役に立ちましたか？</h2><p>今後の改善に使います。回答は匿名です。</p><div class="feedback-actions"><button type="button" data-feedback="helpful">👍 役に立った</button><button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button></div><div class="feedback-detail" hidden><label>どこが分かりにくかったですか？ <span style="font-weight:400;color:var(--muted)">（任意）</span></label><textarea maxlength="1000" placeholder="例：途中の考え方をもう少し詳しく知りたい"></textarea><button type="button" class="feedback-submit">送信</button></div><p class="feedback-status" role="status" aria-live="polite"></p></div><div class="pager"><a href="index.html">← 倍数判定トレーニングへ</a></div></section><p class="footer-note">中学受験算数・たなべ式計算道場</p></main><script src="../assets/feedback.js" defer></script></body></html>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>サッと約分する｜倍数判定トレーニング｜たなべ式計算道場</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script>
+      window.MathJax = { tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]] }, svg: { fontCache: "global" } };
+    </script>
+    <script defer src="../assets/mathjax/tex-svg.js"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="sitehead">
+        <a class="brand" href="../index.html">たなべ式計算道場</a>
+        <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
+      </header>
+      <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; サッと約分する</div>
+      <section class="lesson">
+        <span class="eyebrow">Practice</span>
+        <h1>サッと約分する</h1>
+        <p class="lead">約分するときに「何で割れる？」を手当たり次第に探さず、倍数判定から候補を見つけます。</p>
+        <h2>文章題の答えに分数が出てきたら</h2>
+        <div class="example">
+          <p><b>問題</b></p>
+          <p>42人のクラスで、18人が電車で通学しています。電車で通学している人はクラス全体の何分のいくつですか。最も簡単な分数で答えましょう。</p>
+          <div class="math">\(\frac{18}{42}\)</div>
+        </div>
+        <p>ここで必要になるのが約分です。18と42を見て「何で割れる？」を探します。</p>
+        <h2>倍数判定で、割れる数を見つける</h2>
+        <div class="example">
+          <p>18も42も偶数なので2で割れます。さらに、</p>
+          <div class="math eq-aligned">\(\begin{aligned}1+8&=9\\4+2&=6\end{aligned}\)</div>
+          <p>どちらも3の倍数です。つまり、2と3を組み合わせた6でも割れます。</p>
+          <div class="math eq-aligned">\(\begin{aligned}\frac{18}{42}&=\frac{18\div6}{42\div6}\\&=\frac37\end{aligned}\)</div>
+          <p><b>答え：\(\frac37\)</b></p>
+        </div>
+        <div class="rule"><b>大きな数を見て、やみくもに割る数を探さない。</b><br />倍数判定ができると「何で割れそうか」の候補をすぐに見つけられます。</div>
+        <h2>もう一つ｜掛ける前に約分する</h2>
+        <div class="example">
+          <p><b>次の計算をします。</b></p>
+          <div class="math">\(\frac{48\times25}{6}\)</div>
+          <p>48×25を先に計算することもできます。でも48を見ると、偶数なので2の倍数。さらに、</p>
+          <div class="math">\(4+8=12\)</div>
+          <p>なので3の倍数でもあります。つまり48は6の倍数です。</p>
+          <div class="math eq-aligned">\(\begin{aligned}\frac{48\times25}{6}&=8\times25\\&=200\end{aligned}\)</div>
+        </div>
+        <div class="why"><b>ここでは「割れることに気づく」のが倍数判定の役割</b><br />気づいたあと「先に割って数を大きくしない」のは、計算の工夫です。同じ計算の中で2つの力がつながっています。</div>
+        <h2>何が便利だった？</h2>
+        <div class="rule">倍数判定ができると、大きな数でも<b>「何で割れそうか」</b>を素早く見つけられます。約分のたびに手当たり次第に割って確かめる必要がありません。</div>
+        <h2>関連する講義</h2>
+        <div class="related-tips"><a class="related-tip" href="2-4-8.html">2・4・8の倍数 →</a><a class="related-tip" href="3-9.html">3・9の倍数 →</a><a class="related-tip" href="../view/tip-divide-first.html">計算の工夫｜掛ける前に割る →</a></div>
+        <div class="feedback" data-page="multiple/practice-reduce" data-title="サッと約分する">
+          <h2>この講義は役に立ちましたか？</h2>
+          <p>今後の改善に使います。回答は匿名です。</p>
+          <div class="feedback-actions"><button type="button" data-feedback="helpful">👍 役に立った</button><button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button></div>
+          <div class="feedback-detail" hidden>
+            <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label
+            ><textarea maxlength="1000" placeholder="例：途中の考え方をもう少し詳しく知りたい"></textarea><button type="button" class="feedback-submit">送信</button>
+          </div>
+          <p class="feedback-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="pager"><a href="index.html">← 倍数判定トレーニングへ</a></div>
+      </section>
+      <p class="footer-note">中学受験算数・たなべ式計算道場</p>
+    </main>
+    <script src="../assets/feedback.js" defer></script>
+  </body>
+</html>

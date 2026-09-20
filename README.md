@@ -65,6 +65,20 @@ cd api && .venv/bin/python manage_user.py add your-email@example.com --role admi
 DB は `api/data/feedback.sqlite3` に作られます（git 管理外）。
 別の場所を使うなら `FEEDBACK_DB` を指定します。
 
+## HTML の整形
+
+手で編集しやすいよう、HTML はタグごとに改行・インデントしています。整形には
+prettier を使い、設定は `.prettierrc` にあります。
+
+```sh
+npx prettier --write "**/*.html"
+```
+
+`printWidth` を大きくしているのは、日本語の文章が折り返されるのを防ぐためです。
+折り返すと改行が空白として描画され、文字間が開いてしまう可能性があります。
+`htmlWhitespaceSensitivity: "css"` は既定値で、インライン要素の前後に
+空白を入れないための設定です。
+
 ## フィードバック機能
 
 各講義末尾に「👍 役に立った / 🤔 もう少し説明がほしい」を追加。`api/` の FastAPI API が SQLite に匿名保存します。詳しくは `api/README.md` を参照してください。
