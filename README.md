@@ -18,17 +18,52 @@
 ビルド工程のない静的HTML/CSS構成です。数式表示に MathJax、フィードバック送信に
 小さなスクリプトを使います。
 
-## ローカルで表示を確認する
+## ローカルで動かす
+
+### 準備（最初の一度だけ）
 
 MathJax は外部CDNではなく自サーバーから配信します（CDNの不調がそのまま
-表示遅延になるため）。取得物は git 管理外なので、最初に一度取得します。
+表示遅延になるため）。取得物は git 管理外なので、最初に取得します。
 
 ```sh
-./scripts/fetch-mathjax.sh   # assets/mathjax/ に配置
-python3 -m http.server 8000  # file:// では動かないので HTTP で開く
+./scripts/fetch-mathjax.sh          # assets/mathjax/ に配置
+
+cd api
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cd ..
 ```
 
-デプロイ時は CD が同じスクリプトを実行するので、手動の用意は不要です。
+デプロイ時は CD が同じ手順を実行するので、サーバー側の手動準備は不要です。
+
+### 起動
+
+本番では nginx が `/calc-dojo/` 配下で静的ファイルと API を振り分けています。
+開発用サーバーは同じ振り分けを1プロセスで再現するので、管理画面も含めて
+本番と同じパス構成で確認できます。
+
+```sh
+api/.venv/bin/python scripts/dev-server.py
+```
+
+| URL | 内容 |
+|---|---|
+| http://127.0.0.1:8000/calc-dojo/ | サイト |
+| http://127.0.0.1:8000/calc-dojo/admin/login | 管理画面 |
+
+静的ファイルだけを配信する `python3 -m http.server` でも講義ページは見られますが、
+管理画面は動かず、フィードバック送信も失敗します。
+
+### 管理画面にログインする
+
+ローカル用のユーザーを作ります。パスワードは対話入力です。
+
+```sh
+cd api && .venv/bin/python manage_user.py add your-email@example.com --role admin
+```
+
+DB は `api/data/feedback.sqlite3` に作られます（git 管理外）。
+別の場所を使うなら `FEEDBACK_DB` を指定します。
 
 ## フィードバック機能
 

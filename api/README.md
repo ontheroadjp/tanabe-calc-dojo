@@ -228,6 +228,55 @@ ssh -F /dev/null -i ~/.ssh/calc_dojo_deploy -o IdentityAgent=none \
 効果があるのは書き込み範囲が `<root>` 配下に限定される点と、`/etc` や
 他アプリのディレクトリ、ポート転送による踏み台化が塞がれる点。
 
+## 管理画面
+
+`/calc-dojo/admin` でフィードバックの集計・コメント一覧と、MathJax の
+バージョン状況を確認できます。認証が必要です。
+
+検索エンジン対策は3段構えにしています。
+
+| 場所 | 内容 |
+|---|---|
+| 管理画面のHTML | `<meta name="robots" content="noindex, nofollow">` |
+| nginx (`/calc-dojo/admin`) | `X-Robots-Tag: noindex, nofollow`（全レスポンスに付く） |
+| サイトヘッダのログインリンク | `rel="nofollow"` |
+
+`robots.txt` はドメイン直下 (`/robots.txt`) に置く必要があり、そこは別アプリの
+管轄なので使っていません。`X-Robots-Tag` はレスポンスヘッダなので、
+HTML 以外も含めて確実に効きます。
+
+### 認証
+
+同じ SQLite に `users` と `sessions` を持ちます。将来のユーザー登録や
+有料プラン（Stripe）も同じDBで扱えるよう、`users.role` を
+`admin` / `free` / `paid` で表す設計にしています。プラン詳細や決済情報は
+別表を足して持たせる想定です。管理画面に入れるのは `role = 'admin'` のみ。
+
+パスワードは標準ライブラリの `scrypt` でハッシュ化します（外部ライブラリ不要）。
+セッションは DB 側で管理し、Cookie は `/calc-dojo/admin` にだけ送られます。
+
+### ユーザーの作成
+
+パスワードは対話的に入力します。引数には渡しません（シェル履歴やプロセス一覧に
+残るため）。
+
+```sh
+cd <root>/api
+.venv/bin/python manage_user.py add your-email@example.com --role admin
+.venv/bin/python manage_user.py list
+.venv/bin/python manage_user.py passwd your-email@example.com   # 既存セッションも無効化
+.venv/bin/python manage_user.py role your-email@example.com paid
+```
+
+### MathJax のバージョン
+
+配信中のバージョンと npm の最新版を並べて表示します。更新はこの画面からは
+行いません。`scripts/fetch-mathjax.sh` の `VERSION=` を書き換えて push すると
+CD が反映するので、いつ誰がどのバージョンに上げたかが git の履歴に残り、
+表示が崩れたら `git revert` で戻せます。更新手順は画面にも表示されます。
+
+最新版の確認結果は1日キャッシュします（`app_state` テーブル）。
+
 ## 集計
 
 公開管理画面は用意していません。サーバー上で:

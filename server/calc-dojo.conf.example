@@ -42,3 +42,12 @@ location = /calc-dojo/api/feedback {
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-Proto $scheme;
 }
+
+# 管理画面。認証はアプリ側（セッションCookie）で行う。
+# 検索エンジンには出さない。
+location ^~ /calc-dojo/admin {
+    proxy_pass http://unix:__ROOT__/api/run/api.sock:/admin;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    add_header X-Robots-Tag "noindex, nofollow" always;
+}
