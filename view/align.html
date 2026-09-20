@@ -14,16 +14,20 @@ window.MathJax = {
 <h2>分数では、何分のいくつかをそろえる</h2>
 <div class="example"><div class="math"><div class="eq-chain">
 <div class="eq-row"><span class="eq">\(\frac13+\frac14\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(\frac4{12}+\frac3{12}\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(\frac7{12}\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">分母を12にそろえる</span></div>
+<div class="eq-row"><span class="eq">\(\frac4{12}+\frac3{12}\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">分子どうしを足す</span></div>
+<div class="eq-row"><span class="eq">\(\frac7{12}\)</span></div>
 </div></div>
 <p>1/3と1/4では一つ分の大きさが違います。12分のいくつかにそろえると、同じ単位で扱えます。</p></div>
 <h2>比でも同じ</h2>
 <div class="example"><div class="math"><div class="eq-chain">
 <div class="eq-row"><span class="eq">\(A:B=2:3\)</span></div>
 <div class="eq-row"><span class="eq">\(B:C=4:5\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(8:12\quad\text{と}\quad12:15\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(A:B:C=8:12:15\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">共通するBを12にそろえる</span></div>
+<div class="eq-row"><span class="eq">\(8:12\quad\text{と}\quad12:15\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">Bを軸に3つをつなぐ</span></div>
+<div class="eq-row"><span class="eq">\(A:B:C=8:12:15\)</span></div>
 </div></div>
 <p>共通しているBを12にそろえることで、A・B・Cの関係を一つにつなげられます。</p></div>
 <div class="rule"><b>通分と連比は、見方としては似ている</b><br>手順は違っても、「基準が違うものを同じ基準に直してから扱う」という発想は共通しています。</div>
@@ -33,8 +37,10 @@ window.MathJax = {
 <div class="example"><div class="math"><div class="eq-chain">
 <div class="eq-row"><span class="eq">\(A:B=3:4\)</span></div>
 <div class="eq-row"><span class="eq">\(B:C=6:5\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(9:12\quad\text{と}\quad12:10\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(A:B:C=9:12:10\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">共通するBを12にそろえる</span></div>
+<div class="eq-row"><span class="eq">\(9:12\quad\text{と}\quad12:10\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">Bを軸に3つをつなぐ</span></div>
+<div class="eq-row"><span class="eq">\(A:B:C=9:12:10\)</span></div>
 </div></div>
 <p>Bの大きさが4と6で違うままでは、三つの関係を一つにできません。Bを12にそろえると、A・B・Cを同じ基準で見ることができます。通分以外でも「基準をそろえる」は頻繁に使います。</p></div>
 

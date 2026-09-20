@@ -21,8 +21,10 @@ window.MathJax = {
 <h2>便利な形に変える</h2>
 <div class="example"><div class="math"><div class="eq-chain">
 <div class="eq-row"><span class="eq">\(48\times0.25\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(48\times\frac14\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(12\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">0.25を 1/4 と見る</span></div>
+<div class="eq-row"><span class="eq">\(48\times\frac14\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">48を4で割る</span></div>
+<div class="eq-row"><span class="eq">\(12\)</span></div>
 </div></div>
 <p>0.25のまま計算するより、1/4と見れば「48の4分の1」として簡単に処理できます。</p></div>
 <div class="rule"><b>表示された形が正解とは限らない</b><br>小数で出てきたから小数で計算する、分数で出てきたから分数のまま計算する、とは限りません。同じ値なら、目的に合う形へ自由に行き来できます。</div>
@@ -31,9 +33,12 @@ window.MathJax = {
 <h2>この見方は、こんなところで使える</h2>
 <div class="example"><div class="math"><div class="eq-chain">
 <div class="eq-row"><span class="eq">\(3.75\times32\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(\frac{15}{4}\times32\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(15\times8\)</span></div>
-<div class="eq-row"><span class="arrow">→</span><span class="eq">\(120\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">3.75を 15/4 と見る</span></div>
+<div class="eq-row"><span class="eq">\(\frac{15}{4}\times32\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">32を4で割って約分する</span></div>
+<div class="eq-row"><span class="eq">\(15\times8\)</span></div>
+<div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">15×8 を計算する</span></div>
+<div class="eq-row"><span class="eq">\(120\)</span></div>
 </div></div>
 <p>3.75を小数のまま筆算する必要はありません。3.75＝15/4と見れば、32を4で割ってから15を掛けるだけです。「与えられた形のまま計算しない」ことの便利さがよく分かる例です。</p></div>
 

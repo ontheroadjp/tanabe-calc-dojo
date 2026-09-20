@@ -88,7 +88,11 @@ a{color:inherit}
 .why{margin:16px 0;padding:16px;border-radius:16px;background:var(--accent2)}
 .why b{display:block;color:var(--accent);margin-bottom:4px}
 .rule{margin:16px 0;padding:16px;border-left:5px solid var(--accent);background:#fafafa;border-radius:12px}
-.arrow{color:var(--accent);font-weight:900}
+/* 計算手順の区切り矢印。式と式の間に、何をしたかの説明を添えて置く */
+.arrow-line{display:inline-flex;align-items:center;gap:.45em;line-height:1.2}
+.arrow{color:var(--accent);font-weight:900;font-size:.8em}
+.arrow-note{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:0}
+.eq-chain>.arrow-line{display:flex;justify-content:flex-start}
 
 
 .pager{display:flex;gap:10px;justify-content:space-between;margin-top:28px}
@@ -143,7 +147,6 @@ a{color:inherit}
 .eq-chain{display:flex;flex-direction:column;gap:.45rem;margin:.4rem 0}
 .eq-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
 .eq-row .eq{display:inline-flex;align-items:center;min-width:0}
-.eq-row .arrow{flex:0 0 auto;font-weight:800;color:var(--muted)}
 .eq-row mjx-container{margin:0!important}
 
 .math .equals{display:inline-block;min-width:1.35rem;text-align:center;margin-right:.25rem}
@@ -243,6 +246,7 @@ a{color:inherit}
   .home-hero .hero-subtitle{font-size:19px}
   .lesson h1{font-size:29px}
   .math{font-size:21px}
+  .arrow-note{font-size:13px}
   .feedback-actions{display:grid;grid-template-columns:1fr}
   .feedback button{width:100%;text-align:center}
   .eq-row{gap:.45rem}
