@@ -146,10 +146,13 @@ Secrets から渡します。
 |---|---|
 | `DEPLOY_HOST` | サーバーのホスト名 |
 | `DEPLOY_USER` | ssh ユーザー名 |
-| `DEPLOY_ROOT` | 設置先の絶対パス (末尾スラッシュなし) |
 | `DEPLOY_SSH_KEY` | 秘密鍵 (パスフレーズなし) |
 | `DEPLOY_KNOWN_HOSTS` | `ssh-keyscan <host>` の出力 |
 | `DEPLOY_BASE_URL` | 任意。設定するとデプロイ後に疎通確認を行う |
+
+`DEPLOY_ROOT` (設置先の絶対パス) も登録されているが、forced command の
+導入でワークフローからは参照しなくなった。forced command を外して
+転送先を絶対パス指定に戻す場合に備えて残してある。
 
 初期設定:
 
@@ -157,21 +160,62 @@ Secrets から渡します。
 # 1. デプロイ専用の鍵を作る
 ssh-keygen -t ed25519 -N '' -C 'github-actions-calc-dojo' -f ~/.ssh/calc_dojo_deploy
 
-# 2. 公開鍵をサーバーの ~/.ssh/authorized_keys に追記する
-ssh-copy-id -i ~/.ssh/calc_dojo_deploy.pub <server>
+# 2. 公開鍵をサーバーの ~/.ssh/authorized_keys に追記する。
+#    -f は必須。付けないと ssh-copy-id が「新しい鍵でログインできるか」で
+#    判定するため、ssh_config の IdentityFile など既存の鍵でログインが
+#    成功してしまい「登録済み」と誤判定して何もしない。
+ssh-copy-id -f -i ~/.ssh/calc_dojo_deploy.pub <server>
 
 # 3. Secrets を登録する
 gh secret set DEPLOY_SSH_KEY < ~/.ssh/calc_dojo_deploy
 ssh-keyscan <host> | gh secret set DEPLOY_KNOWN_HOSTS
 gh secret set DEPLOY_HOST --body '<host>'
 gh secret set DEPLOY_USER --body '<user>'
-gh secret set DEPLOY_ROOT --body '<root>'
 gh secret set DEPLOY_BASE_URL --body 'https://<host>/calc-dojo'
 ```
 
 `.venv` `data/` `run/` `.pm2` は転送対象外です。サーバー側で生成・保持され、
 デプロイで上書きされません。`requirements.txt` の差分はデプロイのたびに
 `pip install` で反映されます。
+
+### デプロイ鍵の制限 (forced command)
+
+このサーバーは他のコンテンツもホストしているため、デプロイ鍵には
+シェルを渡さない。`authorized_keys` の該当行に `command=` を付け、
+`server/deploy-shell.sh` を強制実行させる。
+
+```
+command="<root>/server/deploy-shell.sh",restrict ssh-ed25519 AAAA... github-actions-calc-dojo
+```
+
+`command=` は**その鍵で認証したときだけ**適用される。同じ
+`authorized_keys` にある他の鍵や、他サービスの rsync には影響しない。
+
+許可されるのは2つだけで、それ以外は拒否される。
+
+| 要求 | 動作 |
+|---|---|
+| `rsync --server ...` | `rrsync` に渡す。転送先が `<root>` 配下に強制される |
+| `refresh` | `server/refresh.sh` を実行 |
+
+そのためワークフローの転送先は `<root>` からの相対パス (`/web/` など) で
+指定する。`DEPLOY_ROOT` が不要なのはこのため。
+
+検証するときは `-F /dev/null` で ssh_config を無視すること。`-i` と
+`IdentitiesOnly=yes` だけでは ssh_config の `IdentityFile` が併用され、
+個人鍵にフォールバックして「制限が効いていない」ように見える。
+
+```sh
+ssh -F /dev/null -i ~/.ssh/calc_dojo_deploy -o IdentityAgent=none \
+  <user>@<host> whoami
+# => This key is restricted to calc-dojo deployment.
+```
+
+なお、これでシェルアクセスは塞げるが任意コード実行が完全に防げるわけでは
+ない。デプロイは `api/requirements.txt` を転送してから `pip install` するので、
+鍵を奪われれば細工した requirements.txt 経由でコードを実行させられる。
+効果があるのは書き込み範囲が `<root>` 配下に限定される点と、`/etc` や
+他アプリのディレクトリ、ポート転送による踏み台化が塞がれる点。
 
 ## 集計
 
