@@ -87,18 +87,29 @@ alias が指すのは `web/` なので、`api/` と `server/` は同じ親ディ
 ありながら web からは一切参照できません。alias を `calc-dojo/` に向けると
 `app.py` や SQLite DB が直接ダウンロードできてしまうので注意してください。
 
-nginx 設定はテンプレートから実ファイルを生成し、nginx の設定ディレクトリ
-から symlink します。生成物 `server/calc-dojo.conf` はサーバー固有の絶対パスを
-含むため git 管理外です。
+nginx 設定は `server/refresh.sh` がデプロイのたびに
+`calc-dojo.conf.example` から `calc-dojo.conf` を生成します。`alias` と
+`proxy_pass` は絶対パスを要求しますが、このリポジトリは public なので
+サーバーのパスを含む実ファイルは置けません。そのためテンプレート方式です。
 
-```sh
-cd <root>/server
-sed "s|__ROOT__|$(cd .. && pwd)|g" calc-dojo.conf.example > calc-dojo.conf
-# 生成した calc-dojo.conf を nginx の設定ディレクトリから symlink し、reload
+`/etc` 側は生成された `calc-dojo.conf` への symlink なので、初回に一度
+symlink を張れば以降の更新は自動で反映されます。
+
+```
+/etc/nginx/conf.d/<site>/calc-dojo.conf
+  -> <root>/server/calc-dojo.conf
 ```
 
-symlink にしておけば、設定を変えたときは rsync して nginx を reload するだけで
-反映されます。
+ただし nginx の reload には root 権限が必要で、デプロイ鍵では実行できません。
+設定に変更があったときは `refresh.sh` が次のように出力するので、手動で
+reload してください。
+
+```
+nginx 設定を更新しました。反映するには:
+  sudo nginx -t && sudo systemctl reload nginx
+```
+
+内容が変わっていないときは何も出力せず、ファイルも書き換えません。
 
 プロセス管理は systemd を使わず pm2 で行います。既定の pm2 デーモン
 (`~/.pm2`) は他サービスと共有なので、必ず専用の `PM2_HOME` を指定します。
