@@ -88,11 +88,22 @@ a{color:inherit}
 .why{margin:16px 0;padding:16px;border-radius:16px;background:var(--accent2)}
 .why b{display:block;color:var(--accent);margin-bottom:4px}
 .rule{margin:16px 0;padding:16px;border-left:5px solid var(--accent);background:#fafafa;border-radius:12px}
-/* 計算手順の区切り矢印。式と式の間に、何をしたかの説明を添えて置く */
-.arrow-line{display:inline-flex;align-items:center;gap:.45em;line-height:1.2}
+/* 計算手順の区切り矢印。式と式の間に、何をしたかの説明を添えて置く。
+   左右に同じ幅の列を置いて矢印を真ん中の列に固定するので、
+   説明の長さが変わっても矢印の位置は動かない。 */
+.arrow-line{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  column-gap:.45em;
+  line-height:1.2;
+}
+.arrow-line .arrow{grid-column:2}
+.arrow-line .arrow-note{grid-column:3;text-align:left}
 .arrow{color:var(--accent);font-weight:900;font-size:.8em}
 .arrow-note{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:0}
-.eq-chain>.arrow-line{display:flex;justify-content:flex-start}
+/* eq-chain は式が左揃えなので、矢印も左端に置く */
+.eq-chain>.arrow-line{display:flex;justify-content:flex-start;gap:.45em}
 
 
 .pager{display:flex;gap:10px;justify-content:space-between;margin-top:28px}
@@ -247,6 +258,8 @@ a{color:inherit}
   .lesson h1{font-size:29px}
   .math{font-size:21px}
   .arrow-note{font-size:13px}
+  .arrow-line{grid-template-columns:1fr;row-gap:.1em}
+  .arrow-line .arrow,.arrow-line .arrow-note{grid-column:1;text-align:center}
   .feedback-actions{display:grid;grid-template-columns:1fr}
   .feedback button{width:100%;text-align:center}
   .eq-row{gap:.45rem}
