@@ -48,6 +48,11 @@ jobs:
           printf '%s\n' "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
+      # MathJax は外部CDNではなく自サーバーから配信する。
+      # npm から取得して assets/mathjax/ に置き、そのまま rsync する。
+      - name: Fetch MathJax
+        run: ./scripts/fetch-mathjax.sh
+
       - name: Deploy static site
         run: |
           rsync -az --delete -e "$SSH" \

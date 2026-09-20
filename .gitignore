@@ -7,3 +7,6 @@ api/.pm2/
 
 # サーバー固有の絶対パスを含む生成物 (calc-dojo.conf.example から生成)
 server/calc-dojo.conf
+
+# MathJax は scripts/fetch-mathjax.sh が npm から取得する生成物
+assets/mathjax/

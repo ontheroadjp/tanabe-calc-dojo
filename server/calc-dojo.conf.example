@@ -5,6 +5,9 @@
 #     calc-dojo.conf.example > calc-dojo.conf
 #
 # 生成したファイルを nginx の設定ディレクトリから symlink する。
+#
+# gzip 系のディレクティブは location 単位で有効なので、この設定は
+# /calc-dojo/ 配下にだけ効く。同じサーバーの他のコンテンツには影響しない。
 
 # 静的サイトは <root>/web/ のみを公開する。
 # <root>/api/ と <root>/server/ は alias の外なので web からは参照できない。
@@ -12,6 +15,15 @@ location ^~ /calc-dojo/ {
     alias __ROOT__/web/;
     index index.html;
     try_files $uri $uri/ =404;
+
+    # MathJax (tex-svg.js) は 2.1MB あるため圧縮して配信する。
+    # gzip_static は事前生成した .gz をそのまま返すので、
+    # リクエストごとの圧縮処理が発生しない。
+    gzip_static on;
+    gzip on;
+    gzip_types text/css application/javascript image/svg+xml;
+    gzip_min_length 1024;
+    gzip_vary on;
 }
 
 # フィードバックAPI（完全一致なので上の ^~ より優先される）。
