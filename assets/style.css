@@ -100,10 +100,14 @@ a{color:inherit}
 }
 .arrow-line .arrow{grid-column:2}
 .arrow-line .arrow-note{grid-column:3;text-align:left}
+/* eq-chain は式が左揃えなので、説明の幅がブロック幅を広げると
+   矢印の中心が式からずれてしまう。説明を配置計算から外し、
+   矢印が式の真上に来るようにする。 */
+.eq-chain>.arrow-line{position:relative}
+.eq-chain>.arrow-line .arrow-note{position:absolute;left:50%;margin-left:.9em;white-space:nowrap}
 .arrow{color:var(--accent);font-weight:900;font-size:.8em}
 .arrow-note{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:0}
-/* eq-chain は式が左揃えなので、矢印も左端に置く */
-.eq-chain>.arrow-line{display:flex;justify-content:flex-start;gap:.45em}
+
 
 
 .pager{display:flex;gap:10px;justify-content:space-between;margin-top:28px}
@@ -155,7 +159,7 @@ a{color:inherit}
 .math mjx-container[display="true"]{text-align:left!important}
 .example mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:.08em 0}
 
-.eq-chain{display:flex;flex-direction:column;gap:.45rem;margin:.4rem 0}
+.eq-chain{display:flex;flex-direction:column;gap:.45rem;margin:.4rem auto;width:max-content;max-width:100%}
 .eq-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
 .eq-row .eq{display:inline-flex;align-items:center;min-width:0}
 .eq-row mjx-container{margin:0!important}
@@ -260,6 +264,7 @@ a{color:inherit}
   .arrow-note{font-size:13px}
   .arrow-line{grid-template-columns:1fr;row-gap:.1em}
   .arrow-line .arrow,.arrow-line .arrow-note{grid-column:1;text-align:center}
+  .eq-chain>.arrow-line .arrow-note{position:static;margin-left:0;white-space:normal}
   .feedback-actions{display:grid;grid-template-columns:1fr}
   .feedback button{width:100%;text-align:center}
   .eq-row{gap:.45rem}

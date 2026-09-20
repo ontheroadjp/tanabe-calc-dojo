@@ -1,131 +1,131 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>2・4・8の倍数｜倍数判定トレーニング</title>
-    <link rel="stylesheet" href="../assets/style.css" />
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [["\\(", "\\)"]],
-          displayMath: [["\\[", "\\]"]],
-        },
-        svg: { fontCache: "global" },
-      };
-    </script>
-    <script defer src="../assets/mathjax/tex-svg.js"></script>
-  </head>
-  <body>
-    <main class="wrap">
-      <header class="sitehead">
-        <a class="brand" href="../index.html">たなべ式計算道場</a>
-        <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
-      </header>
-      <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 2・4・8の倍数</div>
-      <section class="lesson">
-        <span class="eyebrow">Lesson 02</span>
-        <h1>2・4・8の倍数</h1>
-        <p class="lead">2・4・8は別々に覚えるより、「数の末尾をどこまで見ればよいか」という一つのまとまりとして理解します。</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <title>2・4・8の倍数｜倍数判定トレーニング</title>
+        <link rel="stylesheet" href="../assets/style.css" />
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [["\\(", "\\)"]],
+                    displayMath: [["\\[", "\\]"]],
+                },
+                svg: { fontCache: "global" },
+            };
+        </script>
+        <script defer src="../assets/mathjax/tex-svg.js"></script>
+    </head>
+    <body>
+        <main class="wrap">
+            <header class="sitehead">
+                <a class="brand" href="../index.html">たなべ式計算道場</a>
+                <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
+            </header>
+            <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 2・4・8の倍数</div>
+            <section class="lesson">
+                <span class="eyebrow">Lesson 02</span>
+                <h1>2・4・8の倍数</h1>
+                <p class="lead">2・4・8は別々に覚えるより、「数の末尾をどこまで見ればよいか」という一つのまとまりとして理解します。</p>
 
-        <h2>2の倍数は下1桁</h2>
-        <p>2の倍数かどうかは、下1桁だけを見て判定します。</p>
-        <p class="rule-text">一の位が偶数（0・2・4・6・8）なら2の倍数です。</p>
-        <div class="example">
-          <div class="judgment-example">
-            <div class="math">\(3516 \rightarrow \text{下1桁は6} \rightarrow \text{6は偶数}\)</div>
-            <p class="judgment-result">だから、3516は2の倍数です。</p>
-          </div>
-          <div class="judgment-example">
-            <div class="math">\(2315 \rightarrow \text{下1桁は5} \rightarrow \text{5は奇数}\)</div>
-            <p class="judgment-result">だから、2315は2の倍数ではありません。</p>
-          </div>
-        </div>
-        <div class="rule"><b>見る範囲</b><br />2の倍数判定で見るのは下1桁だけです。</div>
-        <h2>4の倍数は下2桁</h2>
-        <p>4の倍数かどうかは、下2桁だけを見て判定します。</p>
-        <p class="rule-text">下2桁が4の倍数なら4の倍数です。</p>
-        <div class="example">
-          <div class="judgment-example">
-            <div class="math">\(2316 \rightarrow \text{下2桁は16} \rightarrow \text{16は4の倍数}\)</div>
-            <p class="judgment-result">だから、2316は4の倍数です。</p>
-          </div>
-          <div class="judgment-example">
-            <div class="math">\(2318 \rightarrow \text{下2桁は18} \rightarrow \text{18は4の倍数ではない}\)</div>
-            <p class="judgment-result">だから、2318は4の倍数ではありません。</p>
-          </div>
-        </div>
-        <h2>8の倍数は下3桁</h2>
-        <p>8の倍数かどうかは、下3桁だけを見て判定します。</p>
-        <p class="rule-text">下3桁が8の倍数なら8の倍数です。</p>
-        <div class="example">
-          <div class="judgment-example">
-            <div class="math">\(12624 \rightarrow \text{下3桁は624} \rightarrow \text{624は8の倍数}\)</div>
-            <p class="judgment-result">だから、12624は8の倍数です。</p>
-          </div>
-          <div class="judgment-example">
-            <div class="math">\(7350 \rightarrow \text{下3桁は350} \rightarrow \text{350は8の倍数ではない}\)</div>
-            <p class="judgment-result">だから、7350は8の倍数ではありません。</p>
-          </div>
-        </div>
-        <div class="rule"><b>見る範囲</b><br />2なら一の位、4なら下2桁、8なら下3桁。2 → 4 → 8 と進むにつれて、判定に必要な末尾の桁が1つずつ増えます。</div>
-        <h2>まず2の倍数かを見る</h2>
-        <p>4の倍数は必ず2の倍数です。また、8の倍数は必ず4の倍数なので、2の倍数でもあります。</p>
-        <p>そのため、ある数が奇数だと分かった時点で、その数は2の倍数ではなく、同時に4の倍数でも8の倍数でもないと判断できます。4や8の判定を続ける必要はありません。</p>
-        <div class="example">
-          <p>例えば、問題に出てきた数が奇数なら、一の位を見ただけで2・4・8の倍数ではないことが確定します。</p>
-        </div>
-        <div class="rule"><b>必要のない判定はしない</b><br />2・4・8にはつながりがあります。まず一の位を見て2の倍数かを確認し、そこで外れたら4・8の判定には進みません。</div>
+                <h2>2の倍数は下1桁</h2>
+                <p>2の倍数かどうかは、下1桁だけを見て判定します。</p>
+                <p class="rule-text">一の位が偶数（0・2・4・6・8）なら2の倍数です。</p>
+                <div class="example">
+                    <div class="judgment-example">
+                        <div class="math">\(3516 \rightarrow \text{下1桁は6} \rightarrow \text{6は偶数}\)</div>
+                        <p class="judgment-result">だから、3516は2の倍数です。</p>
+                    </div>
+                    <div class="judgment-example">
+                        <div class="math">\(2315 \rightarrow \text{下1桁は5} \rightarrow \text{5は奇数}\)</div>
+                        <p class="judgment-result">だから、2315は2の倍数ではありません。</p>
+                    </div>
+                </div>
+                <div class="rule"><b>見る範囲</b><br />2の倍数判定で見るのは下1桁だけです。</div>
+                <h2>4の倍数は下2桁</h2>
+                <p>4の倍数かどうかは、下2桁だけを見て判定します。</p>
+                <p class="rule-text">下2桁が4の倍数なら4の倍数です。</p>
+                <div class="example">
+                    <div class="judgment-example">
+                        <div class="math">\(2316 \rightarrow \text{下2桁は16} \rightarrow \text{16は4の倍数}\)</div>
+                        <p class="judgment-result">だから、2316は4の倍数です。</p>
+                    </div>
+                    <div class="judgment-example">
+                        <div class="math">\(2318 \rightarrow \text{下2桁は18} \rightarrow \text{18は4の倍数ではない}\)</div>
+                        <p class="judgment-result">だから、2318は4の倍数ではありません。</p>
+                    </div>
+                </div>
+                <h2>8の倍数は下3桁</h2>
+                <p>8の倍数かどうかは、下3桁だけを見て判定します。</p>
+                <p class="rule-text">下3桁が8の倍数なら8の倍数です。</p>
+                <div class="example">
+                    <div class="judgment-example">
+                        <div class="math">\(12624 \rightarrow \text{下3桁は624} \rightarrow \text{624は8の倍数}\)</div>
+                        <p class="judgment-result">だから、12624は8の倍数です。</p>
+                    </div>
+                    <div class="judgment-example">
+                        <div class="math">\(7350 \rightarrow \text{下3桁は350} \rightarrow \text{350は8の倍数ではない}\)</div>
+                        <p class="judgment-result">だから、7350は8の倍数ではありません。</p>
+                    </div>
+                </div>
+                <div class="rule"><b>見る範囲</b><br />2なら一の位、4なら下2桁、8なら下3桁。2 → 4 → 8 と進むにつれて、判定に必要な末尾の桁が1つずつ増えます。</div>
+                <h2>まず2の倍数かを見る</h2>
+                <p>4の倍数は必ず2の倍数です。また、8の倍数は必ず4の倍数なので、2の倍数でもあります。</p>
+                <p>そのため、ある数が奇数だと分かった時点で、その数は2の倍数ではなく、同時に4の倍数でも8の倍数でもないと判断できます。4や8の判定を続ける必要はありません。</p>
+                <div class="example">
+                    <p>例えば、問題に出てきた数が奇数なら、一の位を見ただけで2・4・8の倍数ではないことが確定します。</p>
+                </div>
+                <div class="rule"><b>必要のない判定はしない</b><br />2・4・8にはつながりがあります。まず一の位を見て2の倍数かを確認し、そこで外れたら4・8の判定には進みません。</div>
 
-        <h2>4の倍数判定のコツ</h2>
-        <p>4の倍数かどうかは、下2桁が4で割り切れるかを調べます。ただし、毎回その2桁を4で割る必要はありません。</p>
-        <p>この方法を使うために、<b>40・60・80が4の倍数であることは覚えておくと便利</b>です。40を超える数では、これらの分かりやすい4の倍数を引いて数を小さくすると、判定が楽になります。</p>
-        <div class="example">
-          <p>例えば、下2桁が78なら、近くの4の倍数である60を引きます。</p>
-          <div class="math">\(78-60=18\)</div>
-          <p>60は4の倍数なので、残った18が4の倍数かだけを見れば十分です。18は4の倍数ではないため、78は4の倍数ではありません。</p>
-        </div>
-        <p>同じように、80などの分かりやすい4の倍数を基準にしても構いません。大きな数をそのまま4で割るのではなく、<b>分かっている4の倍数を引いて、小さな数にしてから見る</b>のがコツです。</p>
+                <h2>4の倍数判定のコツ</h2>
+                <p>4の倍数かどうかは、下2桁が4で割り切れるかを調べます。ただし、毎回その2桁を4で割る必要はありません。</p>
+                <p>この方法を使うために、<b>40・60・80が4の倍数であることは覚えておくと便利</b>です。40を超える数では、これらの分かりやすい4の倍数を引いて数を小さくすると、判定が楽になります。</p>
+                <div class="example">
+                    <p>例えば、下2桁が78なら、近くの4の倍数である60を引きます。</p>
+                    <div class="math">\(78-60=18\)</div>
+                    <p>60は4の倍数なので、残った18が4の倍数かだけを見れば十分です。18は4の倍数ではないため、78は4の倍数ではありません。</p>
+                </div>
+                <p>同じように、80などの分かりやすい4の倍数を基準にしても構いません。大きな数をそのまま4で割るのではなく、<b>分かっている4の倍数を引いて、小さな数にしてから見る</b>のがコツです。</p>
 
-        <h2>8の倍数判定にも使える</h2>
-        <p>8の倍数は下3桁で判定します。この場合も、下3桁をそのまま8で割る必要はありません。</p>
-        <p>ここで、<b>九九の8の段を10倍した数も8の倍数</b>だと覚えておくと便利です。</p>
-        <div class="example">
-          <div class="math">\(8\times1=8 \quad\rightarrow\quad 8\times10=80\)</div>
-          <div class="math">\(8\times2=16 \quad\rightarrow\quad 16\times10=160\)</div>
-          <div class="math">\(8\times3=24 \quad\rightarrow\quad 24\times10=240\)</div>
-          <div class="math">\(8\times4=32 \quad\rightarrow\quad 32\times10=320\)</div>
-          <p>このように、80、160、240、320……をすぐに8の倍数だと分かるようにしておけば、下3桁から近い8の倍数を引き、残りを小さくして判定できます。</p>
-        </div>
-        <div class="example">
-          <p>例えば、下3桁が376なら、320が8の倍数だと分かるので、</p>
-          <div class="math">\(376-320=56\)</div>
-          <p>あとは56が8の倍数かを見ればよく、九九からすぐに8の倍数だと分かります。したがって376は8の倍数です。</p>
-        </div>
-        <div class="rule"><b>「割る」より「分かる倍数を引く」</b><br />4や8の倍数判定で数が大きく感じたら、すでに分かっている倍数を引いて、九九で判断できる大きさまで小さくします。</div>
+                <h2>8の倍数判定にも使える</h2>
+                <p>8の倍数は下3桁で判定します。この場合も、下3桁をそのまま8で割る必要はありません。</p>
+                <p>ここで、<b>九九の8の段を10倍した数も8の倍数</b>だと覚えておくと便利です。</p>
+                <div class="example">
+                    <div class="math">\(8\times1=8 \quad\rightarrow\quad 8\times10=80\)</div>
+                    <div class="math">\(8\times2=16 \quad\rightarrow\quad 16\times10=160\)</div>
+                    <div class="math">\(8\times3=24 \quad\rightarrow\quad 24\times10=240\)</div>
+                    <div class="math">\(8\times4=32 \quad\rightarrow\quad 32\times10=320\)</div>
+                    <p>このように、80、160、240、320……をすぐに8の倍数だと分かるようにしておけば、下3桁から近い8の倍数を引き、残りを小さくして判定できます。</p>
+                </div>
+                <div class="example">
+                    <p>例えば、下3桁が376なら、320が8の倍数だと分かるので、</p>
+                    <div class="math">\(376-320=56\)</div>
+                    <p>あとは56が8の倍数かを見ればよく、九九からすぐに8の倍数だと分かります。したがって376は8の倍数です。</p>
+                </div>
+                <div class="rule"><b>「割る」より「分かる倍数を引く」</b><br />4や8の倍数判定で数が大きく感じたら、すでに分かっている倍数を引いて、九九で判断できる大きさまで小さくします。</div>
 
-        <h2>他の判定と組み合わせる</h2>
-        <p>この判定は、ほかの倍数判定と組み合わせて使うこともできます。まずはこのページの判定を迷わずできるようにしてから、組み合わせを考えましょう。</p>
-        <p class="lesson-link"><a href="combine.html">LESSON 04「判定を組み合わせる」へ →</a></p>
+                <h2>他の判定と組み合わせる</h2>
+                <p>この判定は、ほかの倍数判定と組み合わせて使うこともできます。まずはこのページの判定を迷わずできるようにしてから、組み合わせを考えましょう。</p>
+                <p class="lesson-link"><a href="combine.html">LESSON 04「判定を組み合わせる」へ →</a></p>
 
-        <div class="feedback" data-page="multiple/2-4-8" data-title="2・4・8の倍数">
-          <h2>この講義は役に立ちましたか？</h2>
-          <p>今後の改善に使います。回答は匿名です。</p>
-          <div class="feedback-actions">
-            <button type="button" data-feedback="helpful">👍 役に立った</button>
-            <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
-          </div>
-          <div class="feedback-detail" hidden>
-            <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
-            <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
-            <button type="button" class="feedback-submit">送信</button>
-          </div>
-          <p class="feedback-status" role="status" aria-live="polite"></p>
-        </div>
-        <div class="pager"><a href="5.html">← 5の倍数</a><a href="3-9.html">3・9の倍数 →</a></div>
-      </section>
-      <p class="footer-note">中学受験算数・たなべ式計算道場</p>
-    </main>
-    <script src="../assets/feedback.js" defer></script>
-  </body>
+                <div class="feedback" data-page="multiple/2-4-8" data-title="2・4・8の倍数">
+                    <h2>この講義は役に立ちましたか？</h2>
+                    <p>今後の改善に使います。回答は匿名です。</p>
+                    <div class="feedback-actions">
+                        <button type="button" data-feedback="helpful">👍 役に立った</button>
+                        <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
+                    </div>
+                    <div class="feedback-detail" hidden>
+                        <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
+                        <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
+                        <button type="button" class="feedback-submit">送信</button>
+                    </div>
+                    <p class="feedback-status" role="status" aria-live="polite"></p>
+                </div>
+                <div class="pager"><a href="5.html">← 5の倍数</a><a href="3-9.html">3・9の倍数 →</a></div>
+            </section>
+            <p class="footer-note">中学受験算数・たなべ式計算道場</p>
+        </main>
+        <script src="../assets/feedback.js" defer></script>
+    </body>
 </html>

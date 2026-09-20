@@ -1,137 +1,137 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>たし算・ひき算｜暗算力トレーニング</title>
-    <link rel="stylesheet" href="../assets/style.css" />
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [["\\(", "\\)"]],
-          displayMath: [["\\[", "\\]"]],
-        },
-        svg: { fontCache: "global" },
-      };
-    </script>
-    <script defer src="../assets/mathjax/tex-svg.js"></script>
-  </head>
-  <body>
-    <main class="wrap">
-      <header class="sitehead">
-        <a class="brand" href="../index.html">たなべ式計算道場</a>
-        <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
-      </header>
-      <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">暗算力</a> &gt; 暗算 &gt; たし算・ひき算</div>
-      <section class="lesson">
-        <span class="eyebrow">Training 01</span>
-        <h1>たし算・ひき算</h1>
-        <p class="lead">たし算・ひき算の暗算で最も大切なコツは、<b>前から計算すること</b>です。筆算は一の位から繰り上がり・繰り下がりを処理していきますが、暗算ではその逆に、大きい位から答えを決めていきます。答えの大枠が先に固まるので、頭の中に置いておく数が少なくて済みます。</p>
-        <h2>たし算は前から</h2>
-        <div class="example">
-          <div class="math">
-            \(468 + 197\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を足す</span></div>
-            \(468 + 100 = 568\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を足す</span></div>
-            \(568 + 90 = 658\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を足す</span></div>
-            \(658 + 7 = 665\)
-          </div>
-          <p>百、十、一の順に足します。答えの大きさが前から固まるので、筆算を頭の中に描く必要がありません。</p>
-        </div>
-        <h2>繰り上がりを先読みして、上の位を決める</h2>
-        <p>桁の少ない計算では、もう一歩踏み込んだ見方ができます。上の位を足した直後に一の位を見て、<b>繰り上がるかどうかだけ</b>を判定してしまう方法です。例として 58 + 76 を考えます。</p>
-        <div class="example">
-          <p><b>① 十の位どうしを足す</b></p>
-          <div class="math">\(50 + 70 = 120\)</div>
-          <p>この時点で、答えは120台か130台のどちらかに絞られます。</p>
-        </div>
-        <div class="example">
-          <p><b>② 一の位は「繰り上がるか」だけを見る</b></p>
-          <div class="math">\(120 + 10 = 130\)</div>
-          <p>一の位は 8 と 6。足すと10を超えるので繰り上がります。①の120に10を足して<b>130</b>。ここで上2桁が決まります。あとは130を持っているだけでよく、十の位や百の位を計算し直す必要はありません。</p>
-        </div>
-        <div class="example">
-          <p><b>③ 端数を合流させる</b></p>
-          <div class="math">
-            \(8 + 6 = 14\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位の4を130につける</span></div>
-            \(130 + 4 = 134\)
-          </div>
-          <p>決めておいた130に、余った4を添えるだけです。</p>
-        </div>
-        <h2>ひき算も前から</h2>
-        <div class="example">
-          <div class="math">
-            \(823 - 398\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を引く</span></div>
-            \(823 - 300 = 523\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を引く</span></div>
-            \(523 - 90 = 433\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を引く</span></div>
-            \(433 - 8 = 425\)
-          </div>
-        </div>
-        <h2>引く数を分けて、大きい方から削る</h2>
-        <p>ひき算は繰り下がりがある分、暗算でつまずきやすい計算です。引く数を十の位と一の位に分け、大きい方から削り落としていくと迷いが減ります。例として 143 − 68 を考えます。</p>
-        <div class="example">
-          <p><b>① 十の位だけ先に引く</b></p>
-          <div class="math">\(143 - 60 = 83\)</div>
-          <p>68を一度に引かず、まず60を引きます。この時点で、答えは70台か80台に絞られます。</p>
-        </div>
-        <div class="example">
-          <p><b>② 一の位が引けるかを見て、十の位を決める</b></p>
-          <div class="math">\(83 - 8\)</div>
-          <p>3から8は引けないので繰り下がります。つまり十の位は<b>70</b>で確定です。</p>
-        </div>
-        <div class="example">
-          <p><b>③ 一の位を出して合わせる</b></p>
-          <div class="math">
-            \(13 - 8 = 5\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">確定していた70と合わせる</span></div>
-            \(70 + 5 = 75\)
-          </div>
-          <p>十の位から10を借りて、3と合わせて13。そこから8を引いて5です。「83から3を引いて80、さらに5を引いて75」と補数で処理しても構いません。</p>
-        </div>
-        <h2>補数が使えると、段階そのものが減る</h2>
-        <p>ここまでは百・十・一と<b>3段階</b>に分けて足してきました。補数を使うと、この段階の数そのものを減らせます。</p>
-        <div class="example">
-          <div class="math">
-            \(468 + 197\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">197を 200−3 と見る</span></div>
-            \(468 + 200 = 668\)
-            <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">余分に足した3を引く</span></div>
-            \(668 - 3 = 665\)
-          </div>
-          <p>197は百・十・一のすべてに数があるので、前から足すと3段階かかります。ところが197を200と見れば、足す数がきりのよい数になり<b>1段階</b>で足せます。余分な3を引く操作を入れても<b>2段階</b>です。十の位を足す手間が丸ごと消えるわけです。</p>
-          <p>条件は、197を見た瞬間に「200まであと3」が出てくることです。ここが止まると、かえって遠回りになります。</p>
-        </div>
-        <h2>上の位から決めると、なぜラクなのか</h2>
-        <p>筆算の手順を頭の中で再現しようとすると、「一の位の答え」と「繰り上がりの1」を覚えたまま十の位へ進み、さらに百の位へ……と、複数の数を同時に持ち続けることになります。桁が増えるほどこの負担が重くなり、途中で何を覚えていたのか分からなくなります。</p>
-        <p>上の位から決めていくと、決まった位から順に頭から降ろしていけます。58 + 76 なら、130を決めた時点で残る作業は「4を足す」だけです。最後に残るのが1桁の計算なので、桁が増えても破綻しません。</p>
-        <div class="rule"><b>途中で止めてもよい</b><br />買い物や見積もりでは、1円まで出す前に「だいたい130くらい」と分かれば足りる場面が多くあります。上の位から決める計算は、途中で止めればそのまま概数として使えます。</div>
-        <div class="rule"><b>うまくできないとき</b><br />暗算の手順を増やすより、まず補数を見直します。基本計算そのものが止まるなら、ランダムな加減算や100マス計算などで処理を自動化します。</div>
-        <div class="why"><b>最終ゴール</b>「3桁までは暗算」のように桁数で区切らず、桁が増えても前からまとまりごとに処理できる状態を目指します。暗算が速い人は、計算そのものが速いというより、上の位を先に決めて、残りをどんどん小さな問題にすり替えています。</div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <title>たし算・ひき算｜暗算力トレーニング</title>
+        <link rel="stylesheet" href="../assets/style.css" />
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [["\\(", "\\)"]],
+                    displayMath: [["\\[", "\\]"]],
+                },
+                svg: { fontCache: "global" },
+            };
+        </script>
+        <script defer src="../assets/mathjax/tex-svg.js"></script>
+    </head>
+    <body>
+        <main class="wrap">
+            <header class="sitehead">
+                <a class="brand" href="../index.html">たなべ式計算道場</a>
+                <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
+            </header>
+            <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">暗算力</a> &gt; 暗算 &gt; たし算・ひき算</div>
+            <section class="lesson">
+                <span class="eyebrow">Training 01</span>
+                <h1>たし算・ひき算</h1>
+                <p class="lead">たし算・ひき算の暗算で最も大切なコツは、<b>前から計算すること</b>です。筆算は一の位から繰り上がり・繰り下がりを処理していきますが、暗算ではその逆に、大きい位から答えを決めていきます。答えの大枠が先に固まるので、頭の中に置いておく数が少なくて済みます。</p>
+                <h2>たし算は前から</h2>
+                <div class="example">
+                    <div class="math">
+                        \(468 + 197\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を足す</span></div>
+                        \(468 + 100 = 568\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を足す</span></div>
+                        \(568 + 90 = 658\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を足す</span></div>
+                        \(658 + 7 = 665\)
+                    </div>
+                    <p>百、十、一の順に足します。答えの大きさが前から固まるので、筆算を頭の中に描く必要がありません。</p>
+                </div>
+                <h2>繰り上がりを先読みして、上の位を決める</h2>
+                <p>桁の少ない計算では、もう一歩踏み込んだ見方ができます。上の位を足した直後に一の位を見て、<b>繰り上がるかどうかだけ</b>を判定してしまう方法です。例として 58 + 76 を考えます。</p>
+                <div class="example">
+                    <p><b>① 十の位どうしを足す</b></p>
+                    <div class="math">\(50 + 70 = 120\)</div>
+                    <p>この時点で、答えは120台か130台のどちらかに絞られます。</p>
+                </div>
+                <div class="example">
+                    <p><b>② 一の位は「繰り上がるか」だけを見る</b></p>
+                    <div class="math">\(120 + 10 = 130\)</div>
+                    <p>一の位は 8 と 6。足すと10を超えるので繰り上がります。①の120に10を足して<b>130</b>。ここで上2桁が決まります。あとは130を持っているだけでよく、十の位や百の位を計算し直す必要はありません。</p>
+                </div>
+                <div class="example">
+                    <p><b>③ 端数を合流させる</b></p>
+                    <div class="math">
+                        \(8 + 6 = 14\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位の4を130につける</span></div>
+                        \(130 + 4 = 134\)
+                    </div>
+                    <p>決めておいた130に、余った4を添えるだけです。</p>
+                </div>
+                <h2>ひき算も前から</h2>
+                <div class="example">
+                    <div class="math">
+                        \(823 - 398\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を引く</span></div>
+                        \(823 - 300 = 523\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を引く</span></div>
+                        \(523 - 90 = 433\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を引く</span></div>
+                        \(433 - 8 = 425\)
+                    </div>
+                </div>
+                <h2>引く数を分けて、大きい方から削る</h2>
+                <p>ひき算は繰り下がりがある分、暗算でつまずきやすい計算です。引く数を十の位と一の位に分け、大きい方から削り落としていくと迷いが減ります。例として 143 − 68 を考えます。</p>
+                <div class="example">
+                    <p><b>① 十の位だけ先に引く</b></p>
+                    <div class="math">\(143 - 60 = 83\)</div>
+                    <p>68を一度に引かず、まず60を引きます。この時点で、答えは70台か80台に絞られます。</p>
+                </div>
+                <div class="example">
+                    <p><b>② 一の位が引けるかを見て、十の位を決める</b></p>
+                    <div class="math">\(83 - 8\)</div>
+                    <p>3から8は引けないので繰り下がります。つまり十の位は<b>70</b>で確定です。</p>
+                </div>
+                <div class="example">
+                    <p><b>③ 一の位を出して合わせる</b></p>
+                    <div class="math">
+                        \(13 - 8 = 5\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">確定していた70と合わせる</span></div>
+                        \(70 + 5 = 75\)
+                    </div>
+                    <p>十の位から10を借りて、3と合わせて13。そこから8を引いて5です。「83から3を引いて80、さらに5を引いて75」と補数で処理しても構いません。</p>
+                </div>
+                <h2>補数が使えると、段階そのものが減る</h2>
+                <p>ここまでは百・十・一と<b>3段階</b>に分けて足してきました。補数を使うと、この段階の数そのものを減らせます。</p>
+                <div class="example">
+                    <div class="math">
+                        \(468 + 197\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">197を 200−3 と見る</span></div>
+                        \(468 + 200 = 668\)
+                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">余分に足した3を引く</span></div>
+                        \(668 - 3 = 665\)
+                    </div>
+                    <p>197は百・十・一のすべてに数があるので、前から足すと3段階かかります。ところが197を200と見れば、足す数がきりのよい数になり<b>1段階</b>で足せます。余分な3を引く操作を入れても<b>2段階</b>です。十の位を足す手間が丸ごと消えるわけです。</p>
+                    <p>条件は、197を見た瞬間に「200まであと3」が出てくることです。ここが止まると、かえって遠回りになります。</p>
+                </div>
+                <h2>上の位から決めると、なぜラクなのか</h2>
+                <p>筆算の手順を頭の中で再現しようとすると、「一の位の答え」と「繰り上がりの1」を覚えたまま十の位へ進み、さらに百の位へ……と、複数の数を同時に持ち続けることになります。桁が増えるほどこの負担が重くなり、途中で何を覚えていたのか分からなくなります。</p>
+                <p>上の位から決めていくと、決まった位から順に頭から降ろしていけます。58 + 76 なら、130を決めた時点で残る作業は「4を足す」だけです。最後に残るのが1桁の計算なので、桁が増えても破綻しません。</p>
+                <div class="rule"><b>途中で止めてもよい</b><br />買い物や見積もりでは、1円まで出す前に「だいたい130くらい」と分かれば足りる場面が多くあります。上の位から決める計算は、途中で止めればそのまま概数として使えます。</div>
+                <div class="rule"><b>うまくできないとき</b><br />暗算の手順を増やすより、まず補数を見直します。基本計算そのものが止まるなら、ランダムな加減算や100マス計算などで処理を自動化します。</div>
+                <div class="why"><b>最終ゴール</b>「3桁までは暗算」のように桁数で区切らず、桁が増えても前からまとまりごとに処理できる状態を目指します。暗算が速い人は、計算そのものが速いというより、上の位を先に決めて、残りをどんどん小さな問題にすり替えています。</div>
 
-        <div class="feedback" data-page="mental/addition-subtraction" data-title="たし算・ひき算">
-          <h2>この講義は役に立ちましたか？</h2>
-          <p>今後の改善に使います。回答は匿名です。</p>
-          <div class="feedback-actions">
-            <button type="button" data-feedback="helpful">👍 役に立った</button>
-            <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
-          </div>
-          <div class="feedback-detail" hidden>
-            <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
-            <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
-            <button type="button" class="feedback-submit">送信</button>
-          </div>
-          <p class="feedback-status" role="status" aria-live="polite"></p>
-        </div>
-        <div class="pager"><a href="foundation/reverse-multiplication.html">← 逆九九</a><a href="11-19-multiplication.html">11×11〜19×19 →</a></div>
-      </section>
-      <p class="footer-note">中学受験算数・たなべ式計算道場</p>
-    </main>
-    <script src="../assets/feedback.js" defer></script>
-  </body>
+                <div class="feedback" data-page="mental/addition-subtraction" data-title="たし算・ひき算">
+                    <h2>この講義は役に立ちましたか？</h2>
+                    <p>今後の改善に使います。回答は匿名です。</p>
+                    <div class="feedback-actions">
+                        <button type="button" data-feedback="helpful">👍 役に立った</button>
+                        <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
+                    </div>
+                    <div class="feedback-detail" hidden>
+                        <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
+                        <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
+                        <button type="button" class="feedback-submit">送信</button>
+                    </div>
+                    <p class="feedback-status" role="status" aria-live="polite"></p>
+                </div>
+                <div class="pager"><a href="foundation/reverse-multiplication.html">← 逆九九</a><a href="11-19-multiplication.html">11×11〜19×19 →</a></div>
+            </section>
+            <p class="footer-note">中学受験算数・たなべ式計算道場</p>
+        </main>
+        <script src="../assets/feedback.js" defer></script>
+    </body>
 </html>

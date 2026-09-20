@@ -1,89 +1,89 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>3・9の倍数｜倍数判定トレーニング</title>
-    <link rel="stylesheet" href="../assets/style.css" />
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [["\\(", "\\)"]],
-          displayMath: [["\\[", "\\]"]],
-        },
-        svg: { fontCache: "global" },
-      };
-    </script>
-    <script defer src="../assets/mathjax/tex-svg.js"></script>
-  </head>
-  <body>
-    <main class="wrap">
-      <header class="sitehead">
-        <a class="brand" href="../index.html">たなべ式計算道場</a>
-        <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
-      </header>
-      <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 3・9の倍数</div>
-      <section class="lesson">
-        <span class="eyebrow">Lesson 03</span>
-        <h1>3・9の倍数</h1>
-        <p class="lead">3と9は、末尾ではなく「各位の数字の和」を見ます。桁数が多くても、同じ考え方で判定できます。</p>
-        <h2>各位の数字を足す</h2>
-        <p>3の倍数は、各位の数字を足した数で判定できます。</p>
-        <p class="rule-text">各位の数字の和が3の倍数なら、元の数も3の倍数です。</p>
-        <div class="example">
-          <div class="math math-lines">
-            <div>\(372 \rightarrow 3+7+2=12\)</div>
-            <div>\(\text{12は3の倍数} \rightarrow \text{372は3の倍数}\)</div>
-          </div>
-          <p>元の数そのものを3で割る必要はありません。桁数が増えても、見るのは各位の数字の和です。</p>
-        </div>
-        <h2>9も同じ見方</h2>
-        <p>9の倍数も、3と同じように各位の数字の和を見ます。</p>
-        <p class="rule-text">各位の数字の和が9の倍数なら、元の数も9の倍数です。</p>
-        <div class="example">
-          <div class="math math-lines">
-            <div>\(5742 \rightarrow 5+7+4+2=18\)</div>
-            <div>\(\text{18は9の倍数} \rightarrow \text{5742は9の倍数}\)</div>
-          </div>
-        </div>
-        <div class="example">
-          <div class="math math-lines">
-            <div>\(123 \rightarrow 1+2+3=6\)</div>
-            <div>\(\text{6は9の倍数ではない} \rightarrow \text{123は9の倍数ではない}\)</div>
-          </div>
-        </div>
-        <div class="rule"><b>3・9の倍数</b><br />各位の数字の和が3の倍数なら3の倍数。9の倍数なら9の倍数。</div>
-        <h2>3の倍数でなければ、9の判定はしない</h2>
-        <p>9の倍数は必ず3の倍数です。そのため、まず3の倍数かどうかを確認し、3の倍数でなければ、その時点で9の倍数でもないと判断できます。</p>
-        <div class="example">
-          <p>例えば124なら、各位の数字を足すと、</p>
-          <div class="math">\(1+2+4=7\)</div>
-          <p>7は3の倍数ではないので、124は3の倍数ではありません。したがって、9の倍数かどうかをさらに調べる必要はありません。</p>
-        </div>
-        <div class="rule"><b>3で外れたら、そこで終わり</b><br />3と9を別々に判定するのではなく、まず3で絞り込みます。9の判定が必要なのは、3の倍数である数だけです。</div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <title>3・9の倍数｜倍数判定トレーニング</title>
+        <link rel="stylesheet" href="../assets/style.css" />
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [["\\(", "\\)"]],
+                    displayMath: [["\\[", "\\]"]],
+                },
+                svg: { fontCache: "global" },
+            };
+        </script>
+        <script defer src="../assets/mathjax/tex-svg.js"></script>
+    </head>
+    <body>
+        <main class="wrap">
+            <header class="sitehead">
+                <a class="brand" href="../index.html">たなべ式計算道場</a>
+                <nav class="site-nav"><a href="../about.html">たなべ式計算道場とは？</a><a class="login-link" rel="nofollow" href="../admin/login">ログイン</a><span class="badge">中学受験</span></nav>
+            </header>
+            <div class="crumbs"><a href="../index.html">トップ</a> &gt; <a href="index.html">倍数判定トレーニング</a> &gt; 3・9の倍数</div>
+            <section class="lesson">
+                <span class="eyebrow">Lesson 03</span>
+                <h1>3・9の倍数</h1>
+                <p class="lead">3と9は、末尾ではなく「各位の数字の和」を見ます。桁数が多くても、同じ考え方で判定できます。</p>
+                <h2>各位の数字を足す</h2>
+                <p>3の倍数は、各位の数字を足した数で判定できます。</p>
+                <p class="rule-text">各位の数字の和が3の倍数なら、元の数も3の倍数です。</p>
+                <div class="example">
+                    <div class="math math-lines">
+                        <div>\(372 \rightarrow 3+7+2=12\)</div>
+                        <div>\(\text{12は3の倍数} \rightarrow \text{372は3の倍数}\)</div>
+                    </div>
+                    <p>元の数そのものを3で割る必要はありません。桁数が増えても、見るのは各位の数字の和です。</p>
+                </div>
+                <h2>9も同じ見方</h2>
+                <p>9の倍数も、3と同じように各位の数字の和を見ます。</p>
+                <p class="rule-text">各位の数字の和が9の倍数なら、元の数も9の倍数です。</p>
+                <div class="example">
+                    <div class="math math-lines">
+                        <div>\(5742 \rightarrow 5+7+4+2=18\)</div>
+                        <div>\(\text{18は9の倍数} \rightarrow \text{5742は9の倍数}\)</div>
+                    </div>
+                </div>
+                <div class="example">
+                    <div class="math math-lines">
+                        <div>\(123 \rightarrow 1+2+3=6\)</div>
+                        <div>\(\text{6は9の倍数ではない} \rightarrow \text{123は9の倍数ではない}\)</div>
+                    </div>
+                </div>
+                <div class="rule"><b>3・9の倍数</b><br />各位の数字の和が3の倍数なら3の倍数。9の倍数なら9の倍数。</div>
+                <h2>3の倍数でなければ、9の判定はしない</h2>
+                <p>9の倍数は必ず3の倍数です。そのため、まず3の倍数かどうかを確認し、3の倍数でなければ、その時点で9の倍数でもないと判断できます。</p>
+                <div class="example">
+                    <p>例えば124なら、各位の数字を足すと、</p>
+                    <div class="math">\(1+2+4=7\)</div>
+                    <p>7は3の倍数ではないので、124は3の倍数ではありません。したがって、9の倍数かどうかをさらに調べる必要はありません。</p>
+                </div>
+                <div class="rule"><b>3で外れたら、そこで終わり</b><br />3と9を別々に判定するのではなく、まず3で絞り込みます。9の判定が必要なのは、3の倍数である数だけです。</div>
 
-        <h2>他の判定と組み合わせる</h2>
-        <p>この判定は、ほかの倍数判定と組み合わせて使うこともできます。まずはこのページの判定を迷わずできるようにしてから、組み合わせを考えましょう。</p>
-        <p class="lesson-link"><a href="combine.html">LESSON 04「判定を組み合わせる」へ →</a></p>
+                <h2>他の判定と組み合わせる</h2>
+                <p>この判定は、ほかの倍数判定と組み合わせて使うこともできます。まずはこのページの判定を迷わずできるようにしてから、組み合わせを考えましょう。</p>
+                <p class="lesson-link"><a href="combine.html">LESSON 04「判定を組み合わせる」へ →</a></p>
 
-        <div class="feedback" data-page="multiple/3-9" data-title="3・9の倍数">
-          <h2>この講義は役に立ちましたか？</h2>
-          <p>今後の改善に使います。回答は匿名です。</p>
-          <div class="feedback-actions">
-            <button type="button" data-feedback="helpful">👍 役に立った</button>
-            <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
-          </div>
-          <div class="feedback-detail" hidden>
-            <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
-            <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
-            <button type="button" class="feedback-submit">送信</button>
-          </div>
-          <p class="feedback-status" role="status" aria-live="polite"></p>
-        </div>
-        <div class="pager"><a href="2-4-8.html">← 2・4・8の倍数</a><a href="combine.html">判定を組み合わせる →</a></div>
-      </section>
-      <p class="footer-note">中学受験算数・たなべ式計算道場</p>
-    </main>
-    <script src="../assets/feedback.js" defer></script>
-  </body>
+                <div class="feedback" data-page="multiple/3-9" data-title="3・9の倍数">
+                    <h2>この講義は役に立ちましたか？</h2>
+                    <p>今後の改善に使います。回答は匿名です。</p>
+                    <div class="feedback-actions">
+                        <button type="button" data-feedback="helpful">👍 役に立った</button>
+                        <button type="button" data-feedback="needs_more">🤔 もう少し説明がほしい</button>
+                    </div>
+                    <div class="feedback-detail" hidden>
+                        <label>どこが分かりにくかったですか？ <span style="font-weight: 400; color: var(--muted)">（任意）</span></label>
+                        <textarea maxlength="1000" placeholder="例：途中の式変形をもう少し詳しく知りたい"></textarea>
+                        <button type="button" class="feedback-submit">送信</button>
+                    </div>
+                    <p class="feedback-status" role="status" aria-live="polite"></p>
+                </div>
+                <div class="pager"><a href="2-4-8.html">← 2・4・8の倍数</a><a href="combine.html">判定を組み合わせる →</a></div>
+            </section>
+            <p class="footer-note">中学受験算数・たなべ式計算道場</p>
+        </main>
+        <script src="../assets/feedback.js" defer></script>
+    </body>
 </html>
