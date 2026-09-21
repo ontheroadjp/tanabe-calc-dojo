@@ -26,93 +26,210 @@
             <section class="lesson">
                 <span class="eyebrow">Training 01</span>
                 <h1>たし算・ひき算</h1>
-                <p class="lead">たし算・ひき算の暗算で最も大切なコツは、<b>前から計算すること</b>です。筆算は一の位から繰り上がり・繰り下がりを処理していきますが、暗算ではその逆に、大きい位から答えを決めていきます。答えの大枠が先に固まるので、頭の中に置いておく数が少なくて済みます。</p>
-                <h2>たし算は前から</h2>
-                <div class="example">
-                    <div class="math">
-                        \(468 + 197\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を足す</span></div>
-                        \(468 + 100 = 568\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を足す</span></div>
-                        \(568 + 90 = 658\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を足す</span></div>
-                        \(658 + 7 = 665\)
-                    </div>
-                    <p>百、十、一の順に足します。答えの大きさが前から固まるので、筆算を頭の中に描く必要がありません。</p>
+                <p class="lead">たし算・ひき算の暗算で最も大切なコツは、<b>前から計算すること</b>です。筆算は一の位から繰り上がり・繰り下がりを処理していきますが、暗算ではその逆に、大きい位から答えを決めていきます。ただし、<b>式の上での計算過程と、頭の中で実際にしていることは同じではありません</b>。このページでは、その二つを並べて見ていきます。</p>
+                <div class="key-points">
+                    <small>この講義のポイント</small>
+                    <ul>
+                        <li>大きい位から決める</li>
+                        <li>頭の中では、数ではなく「言いかけの答え」を持つ</li>
+                        <li>確定した位から、先に書き出す</li>
+                    </ul>
                 </div>
-                <h2>繰り上がりを先読みして、上の位を決める</h2>
-                <p>桁の少ない計算では、もう一歩踏み込んだ見方ができます。上の位を足した直後に一の位を見て、<b>繰り上がるかどうかだけ</b>を判定してしまう方法です。例として 58 + 76 を考えます。</p>
-                <div class="example">
-                    <p><b>① 十の位どうしを足す</b></p>
-                    <div class="math">\(50 + 70 = 120\)</div>
-                    <p>この時点で、答えは120台か130台のどちらかに絞られます。</p>
+                <h2>頭の中では、答えを言いかけている</h2>
+                <div class="calc-step calc-start">
+                    <p class="step-head"><span class="step-num">START</span>この計算を例に見ていきます</p>
+                    <div class="math">\(58 + 76\)</div>
+                    <p>算数の式としてほどくと <b>58 + 70 + 6</b>。足す数を位ごとにばらして、大きいほうから順に足していきます。</p>
                 </div>
-                <div class="example">
-                    <p><b>② 一の位は「繰り上がるか」だけを見る</b></p>
-                    <div class="math">\(120 + 10 = 130\)</div>
-                    <p>一の位は 8 と 6。足すと10を超えるので繰り上がります。①の120に10を足して<b>130</b>。ここで上2桁が決まります。あとは130を持っているだけでよく、十の位や百の位を計算し直す必要はありません。</p>
-                </div>
-                <div class="example">
-                    <p><b>③ 端数を合流させる</b></p>
-                    <div class="math">
-                        \(8 + 6 = 14\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位の4を130につける</span></div>
-                        \(130 + 4 = 134\)
-                    </div>
-                    <p>決めておいた130に、余った4を添えるだけです。</p>
-                </div>
-                <h2>ひき算も前から</h2>
-                <div class="example">
-                    <div class="math">
-                        \(823 - 398\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">まず百の位を引く</span></div>
-                        \(823 - 300 = 523\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">次に十の位を引く</span></div>
-                        \(523 - 90 = 433\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">最後に一の位を引く</span></div>
-                        \(433 - 8 = 425\)
+                <div class="contrast">
+                    <div><b>式の上では</b><span class="formula">58 + 76 = 58 + 70 + 6</span></div>
+                    <div>
+                        <b>頭の中では</b><span class="inhead"><span class="u">「ひゃくにじゅう…」</span>→<span class="u">「ひゃくさんじゅう…」</span>→<span class="u">「ひゃくさんじゅうよん」</span></span>
                     </div>
                 </div>
-                <h2>引く数を分けて、大きい方から削る</h2>
-                <p>ひき算は繰り下がりがある分、暗算でつまずきやすい計算です。引く数を十の位と一の位に分け、大きい方から削り落としていくと迷いが減ります。例として 143 − 68 を考えます。</p>
-                <div class="example">
-                    <p><b>① 十の位だけ先に引く</b></p>
-                    <div class="math">\(143 - 60 = 83\)</div>
-                    <p>68を一度に引かず、まず60を引きます。この時点で、答えは70台か80台に絞られます。</p>
+                <p>式をそのまま追えば <b>58 + 70 = 128</b>、<b>128 + 6 = 134</b> で、途中に 128 という数ができます。ところが頭の中では、この 128 を作っていません。唱えているのは「ひゃくにじゅう…」だけです。この差が、暗算がラクになる正体です。順に見ていきます。</p>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 1</span>上の位を足して、答えを言いかける</p>
+                    <div class="math">\(5 + 7 = 12\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">位の名前をつけて唱える</span></div>
+                    <p class="say">ひゃくにじゅう<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 58 + 70 = 128</p>
+                    <p>「50 + 70 = 120」と2桁で計算しているわけではありません。やっているのは <b>5 + 7 = 12</b> という一桁のたし算だけで、その12に「ひゃく」「じゅう」という位の名前をつけて唱えています。</p>
+                    <p>式の上の 128 のうち、一の位の 8 は <b>58 の 8 がそのまま残っているだけ</b>で、手をつけていません。だから唱える必要もなく、言いかけたまま置いておけます。</p>
                 </div>
-                <div class="example">
-                    <p><b>② 一の位が引けるかを見て、十の位を決める</b></p>
-                    <div class="math">\(83 - 8\)</div>
-                    <p>3から8は引けないので繰り下がります。つまり十の位は<b>70</b>で確定です。</p>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 2</span>一の位は「繰り上がるか」だけを見る</p>
+                    <div class="math">\(8 + 6\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">10を超えるので繰り上がる</span></div>
+                    <p class="say">ひゃく<span class="changed">さんじゅう</span><span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 128 + 6 = 134 の、上2桁が決まったところ</p>
+                    <p>一の位は 8 と 6。足すと10を超えます。ここでやることは「128 に 6 を足す」という計算ではありません。唱えていた<b>「にじゅう」を「さんじゅう」に言い直す</b>だけ。12 を 13 にする、一つ分の繰り上げです。</p>
                 </div>
-                <div class="example">
-                    <p><b>③ 一の位を出して合わせる</b></p>
-                    <div class="math">
-                        \(13 - 8 = 5\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">確定していた70と合わせる</span></div>
-                        \(70 + 5 = 75\)
+                <div class="rule"><b>唱えるのは仮、書くのは確定してから</b><br />「ひゃくにじゅう…」はまだ仮の答えです。ここで 12 と書いてしまうと、繰り上がりが分かった時点で書き直すことになります。書くのは、一の位が繰り上がるかどうかを見て、語尾が決まってからです。</div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 3</span>決まった上2桁を、先に書いてしまう</p>
+                    <p class="write"><span class="fixed">\(13\)</span><span class="blank">\(\square\)</span></p>
+                    <p>「ひゃくさんじゅう」まで決まれば、答えの上2桁は <b>13</b> で動きません。ここで 13 を答え欄に書き出してしまいます。書いた分は頭から降ろせるので、残る仕事は一の位だけになります。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 4</span>残った一の位を添える</p>
+                    <div class="math">\(8 + 6 = 14\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位の4を書き足す</span></div>
+                    <p class="write"><span class="fixed">\(134\)</span></p>
+                    <p class="say-note">式の上では 58 + 70 + 6 = 134</p>
+                    <p>繰り上がりの分は STEP 3 で使い終わっているので、残るのは一の位の <b>4</b> だけ。13 の右に 4 を書いて、「ひゃくさんじゅうよん」と最後まで言い切って終わりです。</p>
+                </div>
+                <h2>桁が増えても、やることは同じ</h2>
+                <div class="calc-step calc-start">
+                    <p class="step-head"><span class="step-num">START</span>この計算を例に見ていきます</p>
+                    <div class="math">\(468 + 197\)</div>
+                    <p>式の上では <b>468 + 100 + 90 + 7</b>。百・十・一と3回に分けて足します。</p>
+                </div>
+                <div class="contrast">
+                    <div><b>式の上では</b><span class="formula">468 + 197 = 468 + 100 + 90 + 7</span></div>
+                    <div>
+                        <b>頭の中では</b><span class="inhead"><span class="u">「ごひゃく…」</span>→<span class="u">「ろっぴゃくごじゅう…」</span>→<span class="u">「ろっぴゃくろくじゅうご」</span></span>
                     </div>
-                    <p>十の位から10を借りて、3と合わせて13。そこから8を引いて5です。「83から3を引いて80、さらに5を引いて75」と補数で処理しても構いません。</p>
                 </div>
-                <h2>補数が使えると、段階そのものが減る</h2>
-                <p>ここまでは百・十・一と<b>3段階</b>に分けて足してきました。補数を使うと、この段階の数そのものを減らせます。</p>
-                <div class="example">
-                    <div class="math">
-                        \(468 + 197\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">197を 200−3 と見る</span></div>
-                        \(468 + 200 = 668\)
-                        <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">余分に足した3を引く</span></div>
-                        \(668 - 3 = 665\)
+                <p>式を一段ずつ追うと <b>568 → 658 → 665</b> と数が並びます。<b>頭の中では、568 も 658 も作っていません。</b>一段下の位を足すたびに、一つ上の位が確定して言葉が伸びていくだけです。</p>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 1</span>百の位を足して、答えを言いかける</p>
+                    <div class="math">\(4 + 1 = 5\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">位の名前をつけて唱える</span></div>
+                    <p class="say">ごひゃく<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 468 + 100 = 568</p>
+                    <p>「ごひゃく…」と唱えているとき、式の上の 568 の下2桁（68）は <b>468 のまま動いていません</b>。動いていない位は唱えないので、口に出るのは「ごひゃく」だけで済みます。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 2</span>十の位を足す。繰り上がるので百の位を言い直す</p>
+                    <div class="math">\(6 + 9 = 15\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">繰り上がるので「ごひゃく」を言い直す</span></div>
+                    <p class="say"><span class="changed">ろっぴゃく</span>ごじゅう<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 568 + 90 = 658</p>
+                    <p class="write"><span class="fixed">\(6\)</span><span class="blank">\(\square \square\)</span></p>
+                    <p>十の位を足した瞬間に、百の位が <b>6</b> で確定します。ここから先はもう動かないので、答え欄に 6 を書けます。「ごじゅう」のほうは、一の位しだいでまだ変わる仮の語尾です。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 3</span>一の位を足して、最後まで言い切る</p>
+                    <div class="math">\(8 + 7 = 15\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">繰り上がるので「ごじゅう」を言い直す</span></div>
+                    <p class="say">ろっぴゃく<span class="changed">ろくじゅう</span>ご</p>
+                    <p class="say-note">式の上では 658 + 7 = 665</p>
+                    <p class="write"><span class="fixed">\(665\)</span></p>
+                    <p>十の位が <b>6</b> で確定し、残った一の位は <b>5</b>。答えは <b>6 → 66 → 665</b> と、左から一桁ずつ書き出していけます。最後まで頭に抱えておく数はありません。</p>
+                </div>
+                <h2>ひき算は、言い直す向きが逆になるだけ</h2>
+                <p>ひき算も同じです。違うのは、繰り下がったときに語尾を<b>一つ下げる</b>ことだけです。</p>
+                <div class="calc-step calc-start">
+                    <p class="step-head"><span class="step-num">START</span>この計算を例に見ていきます</p>
+                    <div class="math">\(143 - 68\)</div>
+                    <p>式の上では <b>143 − 60 − 8</b>。引く数を位ごとにばらして、大きいほうから削っていきます。</p>
+                </div>
+                <div class="contrast">
+                    <div><b>式の上では</b><span class="formula">143 − 68 = 143 − 60 − 8</span></div>
+                    <div>
+                        <b>頭の中では</b><span class="inhead"><span class="u">「はちじゅう…」</span>→<span class="u">「ななじゅう…」</span>→<span class="u">「ななじゅうご」</span></span>
                     </div>
-                    <p>197は百・十・一のすべてに数があるので、前から足すと3段階かかります。ところが197を200と見れば、足す数がきりのよい数になり<b>1段階</b>で足せます。余分な3を引く操作を入れても<b>2段階</b>です。十の位を足す手間が丸ごと消えるわけです。</p>
-                    <p>条件は、197を見た瞬間に「200まであと3」が出てくることです。ここが止まると、かえって遠回りになります。</p>
                 </div>
-                <h2>上の位から決めると、なぜラクなのか</h2>
-                <p>筆算の手順を頭の中で再現しようとすると、「一の位の答え」と「繰り上がりの1」を覚えたまま十の位へ進み、さらに百の位へ……と、複数の数を同時に持ち続けることになります。桁が増えるほどこの負担が重くなり、途中で何を覚えていたのか分からなくなります。</p>
-                <p>上の位から決めていくと、決まった位から順に頭から降ろしていけます。58 + 76 なら、130を決めた時点で残る作業は「4を足す」だけです。最後に残るのが1桁の計算なので、桁が増えても破綻しません。</p>
-                <div class="rule"><b>途中で止めてもよい</b><br />買い物や見積もりでは、1円まで出す前に「だいたい130くらい」と分かれば足りる場面が多くあります。上の位から決める計算は、途中で止めればそのまま概数として使えます。</div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 1</span>上の位を引いて、答えを言いかける</p>
+                    <div class="math">\(14 - 6 = 8\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">位の名前をつけて唱える</span></div>
+                    <p class="say">はちじゅう<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 143 − 60 = 83</p>
+                    <p>143 は「14 の十のかたまりと 3」。そこから 6 の十のかたまりを引くので、14 − 6 = 8 です。式の上の 83 の一の位 3 は 143 の 3 のままなので、ここでも唱えません。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 2</span>一の位が引けるかだけを見る</p>
+                    <div class="math">\(3 - 8\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">引けないので繰り下がる</span></div>
+                    <p class="say"><span class="changed">ななじゅう</span><span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 83 − 8 = 75 の、十の位が決まったところ</p>
+                    <p class="write"><span class="fixed">\(7\)</span><span class="blank">\(\square\)</span></p>
+                    <p>3 から 8 は引けません。たし算で「にじゅう」を「さんじゅう」に上げたのと同じ要領で、こんどは「はちじゅう」を<b>「ななじゅう」に下げます</b>。十の位が 7 で確定するので、ここで 7 を書けます。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 3</span>残った一の位を添える</p>
+                    <div class="math">\(13 - 8 = 5\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位の5を書き足す</span></div>
+                    <p class="write"><span class="fixed">\(75\)</span></p>
+                    <p class="say-note">式の上では 143 − 60 − 8 = 75</p>
+                    <p>十の位から10を借りて、3 と合わせて 13。そこから 8 を引いて 5 です。唱えていた「はちじゅう」に 3 を戻した 83 から、3 を引いて 80、さらに 5 を引いて 75、と補数で処理しても構いません。</p>
+                </div>
+                <h3>3桁のひき算も同じ手つき</h3>
+                <div class="calc-step calc-start">
+                    <p class="step-head"><span class="step-num">START</span>この計算を例に見ていきます</p>
+                    <div class="math">\(823 - 398\)</div>
+                    <p>式の上では <b>823 − 300 − 90 − 8</b>。桁が増えても、分け方は同じです。</p>
+                </div>
+                <div class="contrast">
+                    <div><b>式の上では</b><span class="formula">823 − 398 = 823 − 300 − 90 − 8</span></div>
+                    <div>
+                        <b>頭の中では</b><span class="inhead"><span class="u">「ごひゃく…」</span>→<span class="u">「よんひゃくさんじゅう…」</span>→<span class="u">「よんひゃくにじゅうご」</span></span>
+                    </div>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 1</span>百の位を引いて、答えを言いかける</p>
+                    <div class="math">\(8 - 3 = 5\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">位の名前をつけて唱える</span></div>
+                    <p class="say">ごひゃく<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 823 − 300 = 523</p>
+                    <p>下2桁（23）は 823 のまま動いていないので、唱えるのは「ごひゃく」だけです。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 2</span>十の位を引く。引けないので百の位を下げる</p>
+                    <div class="math">\(2 - 9\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">引けないので「ごひゃく」を下げる</span></div>
+                    <p class="say"><span class="changed">よんひゃく</span>さんじゅう<span class="undecided">…</span></p>
+                    <p class="say-note">式の上では 523 − 90 = 433</p>
+                    <p class="write"><span class="fixed">\(4\)</span><span class="blank">\(\square \square\)</span></p>
+                    <p>2 から 9 は引けないので、「ごひゃく」を「よんひゃく」に下げます。百の位から借りた分を足して、十の位は 12 − 9 = 3。百の位が <b>4</b> で確定するので、ここで 4 を書けます。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 3</span>一の位を引く。引けないので十の位を下げる</p>
+                    <div class="math">\(3 - 8\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">引けないので「さんじゅう」を下げる</span></div>
+                    <p class="say">よんひゃく<span class="changed">にじゅう</span>ご</p>
+                    <p class="say-note">式の上では 433 − 8 = 425</p>
+                    <p class="write"><span class="fixed">\(425\)</span></p>
+                    <p>3 から 8 も引けないので、「さんじゅう」を「にじゅう」に下げ、一の位は 13 − 8 = 5。たし算と手つきは同じで、語尾を上げるか下げるかが違うだけです。</p>
+                </div>
+                <h2>補数が使えると、言い直しそのものが消える</h2>
+                <p>ここまでは百・十・一と<b>3段階</b>に分けて唱えてきました。補数を使うと、この段階の数そのものを減らせます。</p>
+                <div class="calc-step calc-start">
+                    <p class="step-head"><span class="step-num">START</span>この計算を例に見ていきます</p>
+                    <div class="math">\(468 + 197\)</div>
+                    <p>同じ計算を、こんどは 197 を <b>200 − 3</b> と見て解きます。</p>
+                </div>
+                <div class="contrast">
+                    <div><b>式の上では</b><span class="formula">468 + 197 = 468 + 200 − 3</span></div>
+                    <div>
+                        <b>頭の中では</b><span class="inhead"><span class="u">「ろっぴゃくろくじゅうはち」</span>→<span class="u">「ろっぴゃくろくじゅうご」</span></span>
+                    </div>
+                </div>
+                <p>197 は百・十・一のすべてに数があるので、前から足すと3段階かかり、そのたびに言い直しが起きます。ところが 197 を 200 と見れば、足す数がきりのよい数になり、段階そのものが減ります。</p>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 1</span>きりのよい 200 を足す</p>
+                    <div class="math">\(468 + 200 = 668\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">百の位を2つ上げるだけ</span></div>
+                    <p class="say">ろっぴゃくろくじゅうはち</p>
+                    <p>「よんひゃくろくじゅうはち」の百の位を 4 から 6 に上げるだけで、<b>下の位は動きません</b>。繰り上がらないので、言い直しも起きません。</p>
+                </div>
+                <div class="calc-step">
+                    <p class="step-head"><span class="step-num">STEP 2</span>余分に足した 3 を引く</p>
+                    <div class="math">\(668 - 3 = 665\)</div>
+                    <div class="arrow-line"><span class="arrow">↓</span><span class="arrow-note">一の位だけを直す</span></div>
+                    <p class="say">ろっぴゃくろくじゅう<span class="changed">ご</span></p>
+                    <p class="write"><span class="fixed">\(665\)</span></p>
+                    <p>200 は 197 より 3 だけ多いので、その 3 を引きます。<b>2段階</b>で済み、繰り上がりの言い直しはゼロです。</p>
+                </div>
+                <p>条件は、197を見た瞬間に「200まであと3」が出てくることです。ここが止まると、かえって遠回りになります。</p>
+                <h2>なぜ、これがラクなのか</h2>
+                <p>筆算の手順を頭の中で再現しようとすると、「一の位の答え」と「繰り上がりの1」を別々に覚えたまま十の位へ進み、さらに百の位へ……と、複数の数を同時に持ち続けることになります。桁が増えるほどこの負担が重くなり、途中で何を覚えていたのか分からなくなります。</p>
+                <p>式の上では 568、658、665 と数が並びますが、その一つひとつを頭の中で作り直すのは、やはり重い作業です。前から唱える方式で持っているのは、<b>言いかけの言葉ひとつ</b>だけ。しかも確定した位から順に紙へ降ろしていけるので、持ち物は増えません。58 + 76 なら、13 を書いた時点で残る仕事は「4 を書き足す」だけ。最後に残るのが一桁の計算なので、桁が増えても破綻しません。</p>
+                <div class="rule"><b>途中で止めてもよい</b><br />買い物や見積もりでは、1円まで出す前に「だいたい130くらい」と分かれば足りる場面が多くあります。言いかけの「ひゃくさんじゅう…」は、そのまま概数として使えます。</div>
                 <div class="rule"><b>うまくできないとき</b><br />暗算の手順を増やすより、まず補数を見直します。基本計算そのものが止まるなら、ランダムな加減算や100マス計算などで処理を自動化します。</div>
-                <div class="why"><b>最終ゴール</b>「3桁までは暗算」のように桁数で区切らず、桁が増えても前からまとまりごとに処理できる状態を目指します。暗算が速い人は、計算そのものが速いというより、上の位を先に決めて、残りをどんどん小さな問題にすり替えています。</div>
+                <div class="why"><b>最終ゴール</b>「3桁までは暗算」のように桁数で区切らず、桁が増えても前からまとまりごとに処理できる状態を目指します。暗算が速い人は、計算そのものが速いというより、上の位を先に言い切ってしまい、残りをどんどん小さな問題にすり替えています。</div>
 
                 <div class="feedback" data-page="mental/addition-subtraction" data-title="たし算・ひき算">
                     <h2>この講義は役に立ちましたか？</h2>

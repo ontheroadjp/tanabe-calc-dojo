@@ -78,6 +78,7 @@ a{color:inherit}
 }
 .lesson h1{font-size:34px;line-height:1.25;margin:8px 0 10px}
 .lesson h2{font-size:24px;margin:24px 0 8px}
+.lesson h3{font-size:19px;margin:22px 0 6px}
 .lesson p{margin:8px 0;color:#303632}
 .lead{font-size:17px}
 
@@ -88,6 +89,51 @@ a{color:inherit}
 .why{margin:16px 0;padding:16px;border-radius:16px;background:var(--accent2)}
 .why b{display:block;color:var(--accent);margin-bottom:4px}
 .rule{margin:16px 0;padding:16px;border-left:5px solid var(--accent);background:#fafafa;border-radius:12px}
+/* ページ冒頭に置く、そのページの主張のまとめ。濃色は「このページの主張」だけに使い、
+   .example / .rule / .why など薄い箱は補足、という序列にする。
+   項目は3つまで。増やすと目次になって宣言としての力が消える。 */
+.key-points{margin:16px 0 22px;padding:18px 20px;border-radius:var(--r);background:var(--ink);color:#fff}
+.key-points small{display:block;margin-bottom:8px;opacity:.65;font-size:12px;font-weight:800;letter-spacing:.06em}
+.key-points ul{margin:0;padding:0;list-style:none}
+.key-points li{position:relative;margin:6px 0;padding-left:1.35em;font-size:17px;font-weight:800;line-height:1.55}
+.key-points li::before{
+  content:"";
+  position:absolute;
+  left:.25em;
+  top:.62em;
+  width:.42em;
+  height:.42em;
+  border-radius:50%;
+  background:var(--accent2);
+}
+/* 手順を1ステップ1ブロックで見せる。.example は「例を囲む箱」だが、
+   こちらは順番そのものに意味があるので、番号を見出しに強く出す。 */
+.calc-step{margin:12px 0;padding:14px 18px 18px;border-radius:16px;background:#f7f8f6;border:1px solid #e6e9e6}
+/* 手順に入る前に、どの計算を例にするのかを示す導入ブロック。
+   STEP 1 が唐突に始まらないよう、お題の式を大きく出す。 */
+.calc-start{background:#fff;border-color:var(--line)}
+.calc-start .step-num{background:var(--ink)}
+.calc-start .math{font-size:30px;margin:6px 0 10px}
+.step-head{
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:.35rem .7rem;
+  margin:0 0 10px;
+  font-size:17px;
+  font-weight:800;
+}
+.step-num{
+  flex:none;
+  padding:4px 11px;
+  border-radius:999px;
+  background:var(--accent);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  line-height:1.4;
+}
 /* 計算手順の区切り矢印。式と式の間に、何をしたかの説明を添えて置く。
    左右に同じ幅の列を置いて矢印を真ん中の列に固定するので、
    説明の長さが変わっても矢印の位置は動かない。 */
@@ -107,6 +153,46 @@ a{color:inherit}
 .eq-chain>.arrow-line .arrow-note{position:absolute;left:50%;margin-left:.9em;white-space:nowrap}
 .arrow{color:var(--accent);font-weight:900;font-size:.8em}
 .arrow-note{color:var(--muted);font-weight:600;font-size:14px;letter-spacing:0}
+
+/* 暗算の最中に頭の中で唱えている、言いかけの答え。式ではないので .math とは分ける。
+   語尾の「…」は、まだ決まっていない下の位を表す。 */
+.say{
+  text-align:center;
+  font-size:23px;
+  font-weight:800;
+  line-height:1.5;
+  color:var(--accent);
+  margin:8px 0;
+}
+.say::before{content:"「"}
+.say::after{content:"」"}
+.say .undecided{color:var(--muted);font-weight:700}
+/* 繰り上がり・繰り下がりで言い直した位。どこが変わったかを目立たせる。 */
+.say .changed{background:var(--accent2);border-radius:5px;padding:0 .12em}
+/* 確定して答え欄に書き出した数字。□ はまだ書いていない位。 */
+.write{text-align:center;font-size:23px;margin:10px 0}
+.write .fixed{color:var(--accent)}
+.write .blank{color:var(--line)}
+.write mjx-container{margin:0!important}
+/* 式の上での計算過程と、頭の中でしていることを並べて見せる。
+   この二つは同じではない、というのがページ全体の主題なので、
+   例題ごとに冒頭へ置く。 */
+.contrast{margin:14px 0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.contrast>div{
+  display:grid;
+  grid-template-columns:7rem minmax(0,1fr);
+  column-gap:1rem;
+  align-items:baseline;
+  padding:11px 15px;
+}
+.contrast>div+div{border-top:1px solid var(--line)}
+.contrast b{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.04em}
+.contrast .formula{font-size:19px;font-weight:800}
+.contrast .inhead{font-size:19px;font-weight:800;color:var(--accent);line-height:1.5}
+/* 唱えの途中で改行されると読めなくなるので、折り返しは矢印の位置だけに許す。 */
+.contrast .u{white-space:nowrap}
+/* 唱えている内容が、式の上ではどの数にあたるか。 */
+.say-note{text-align:center;font-size:13px;font-weight:600;color:var(--muted);margin:-2px 0 6px!important}
 
 
 
@@ -261,6 +347,13 @@ a{color:inherit}
   .home-hero .hero-subtitle{font-size:19px}
   .lesson h1{font-size:29px}
   .math{font-size:21px}
+  .say,.write{font-size:20px}
+  .contrast>div{grid-template-columns:1fr;row-gap:.15rem}
+  .contrast .formula,.contrast .inhead{font-size:17px}
+  .step-head{font-size:16px}
+  .calc-start .math{font-size:25px}
+  .key-points li{font-size:16px}
+  .calc-step{padding:13px 15px 16px}
   .arrow-note{font-size:13px}
   .arrow-line{grid-template-columns:1fr;row-gap:.1em}
   .arrow-line .arrow,.arrow-line .arrow-note{grid-column:1;text-align:center}
